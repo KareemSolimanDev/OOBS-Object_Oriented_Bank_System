@@ -32,4 +32,5 @@
 > <small>Click to get Details.</small> 
 
 1. ### [Project Requirements.](./doc/1-Requirments/requirments.md)
+1. ### [Project Design.](./doc/2-Design/design.md)
 
