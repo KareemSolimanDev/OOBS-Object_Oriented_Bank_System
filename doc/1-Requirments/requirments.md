@@ -1,15 +1,15 @@
 # [**(OOBS)** -> Object Oriented Bank System.](../../README.md)
 
-## Project Requirements.
+## 📜 Project Requirements.
 
 
-### Notes
+### 📝 Notes
 1. this not actuall requirments document, it's high level system functionallity document.
 
-### Main Idea.
+### 💡 Main Idea.
     Making C++ CLI Application simulate BMS (Bank Management System) with two Applications (Bank Application, ATM Application) with their functionalities.
 
-### Basic Functional Requirements.
+### 🛠 Basic Functional Requirements.
 
     1. Banking Application.
         1. Validate login data.
@@ -29,7 +29,7 @@
         5. Show Transactions log.
         6. Data saved on CSV files.
 
-### Basic non-Functional Requirements.
+### 🧱 Basic non-Functional Requirements.
         1. Banking program.
             1. Performance -> Using C++ for more speed, and because it's a c++ tutorial ^-^.
             2. Usability -> Using very easy UI.

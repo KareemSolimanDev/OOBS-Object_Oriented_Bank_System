@@ -2,9 +2,9 @@
 
 <details>
 
-<summary>Show data.</summary>
+<summary>🎫 Show details.</summary>
 
-| Project Data     |           |
+| Project details  |           |
 | ------------     | --------- |
 | Developer    :   | Kareem    |
 | Prog lang    :   | C++       |
@@ -18,19 +18,19 @@
 
 *ENJOY READING ^_^*
 
-## The Idea.
+## 💡 The Idea.
     Making C++ CLI Application simulate BMS (Bank Management System) with two Applications (Bank Application, ATM Application) with their functionalities. continue reading.
 
-## Project notes.
+## 📝 Project notes.
 
 1. I didn't study how to do SDLC steps **yet**, but i will try make them by name meaning.
 
 ***
 
-## Project Lifecycle.
+## ♻ Project Lifecycle.
 
 > <small>Click to get Details.</small> 
 
-1. ### [Project Requirements.](./doc/1-Requirments/requirments.md)
-1. ### [Project Design.](./doc/2-Design/design.md)
+1. ### 📜 [Project Requirements.](./doc/1-Requirments/requirments.md)
+1. ### 🎨 [Project Design.](./doc/2-Design/design.md)
 
