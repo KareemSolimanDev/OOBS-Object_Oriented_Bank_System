@@ -2,7 +2,7 @@
 
 *.exe
 
-include/
+
 src/
 test/
 doc/3*
