@@ -1,0 +1,10 @@
+.vscode/
+
+*.exe
+
+include/
+src/
+test/
+doc/3*
+doc/4*
+

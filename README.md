@@ -23,7 +23,9 @@
 
 ## 📝 Project notes.
 
-1. I didn't study how to do SDLC steps **yet**, but i will try make them by name meaning.
+1. **important note :** this project from my own creation not following any course or bootcamp.
+2. **another one :** Every line of code, every image in this project is mine (my creation) ,not from any external source.
+3. I didn't study how to do SDLC steps **yet**, but i will try make them by name meaning.
 
 ***
 
@@ -32,5 +34,8 @@
 > <small>Click to get Details.</small> 
 
 1. ### 📜 [Project Requirements.](./doc/1-Requirments/requirments.md)
-1. ### 🎨 [Project Design.](./doc/2-Design/design.md)
+2. ### 🎨 [Project Design.](./doc/2-Design/design.md)
+3. ### 🧰 [Project Implemintation.](./doc/3-Implemintation/implemintation.md)
+4. ### 🧪 [Project Testing.](./doc/4-Testing/testing.md)
+
 

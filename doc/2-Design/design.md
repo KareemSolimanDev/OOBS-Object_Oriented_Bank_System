@@ -12,7 +12,7 @@
 ### 📐 Project Architecture
 > using 3-tier archeticture.
 
-<img src="./imgs/3-tier_archeticture.png" alt="=> Bank app screen flowchart"/>
+<img src="./svgs/3-tier_archeticture.drawio.svg" alt="=> Bank app screen flowchart"/>
 <hr>
 
 ### 📉 Screens flowcharts
