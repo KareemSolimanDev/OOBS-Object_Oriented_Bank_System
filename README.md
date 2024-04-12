@@ -23,7 +23,7 @@
 
 ## Project notes.
 
-1. I don't study how to do SDLC steps **yet**, but i will try make them by name meaning.
+1. I didn't study how to do SDLC steps **yet**, but i will try make them by name meaning.
 
 ***
 

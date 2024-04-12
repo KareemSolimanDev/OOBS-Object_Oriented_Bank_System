@@ -2,6 +2,10 @@
 
 ## Project Requirements.
 
+
+### Notes
+1. this not actuall requirments document, it's high level system functionallity document.
+
 ### Main Idea.
     Making C++ CLI Application simulate BMS (Bank Management System) with two Applications (Bank Application, ATM Application) with their functionalities.
 
