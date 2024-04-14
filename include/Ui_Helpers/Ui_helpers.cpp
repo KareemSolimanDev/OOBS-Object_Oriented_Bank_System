@@ -1,10 +1,19 @@
 #include "Ui_helpers.h"
 
 //======================================================================
+//==================        UI manips             ======================
+//======================================================================
+
+void Ui_helpers::clear()
+    {
+        system("cls");
+    }
+
+//======================================================================
 //==================        Components            ======================
 //======================================================================
 
-void Ui_helpers::alert(string msg="Welcome here.",char lineSign='=', short Xpadding = 15, short Ypadding = 1)
+void Ui_helpers::alert(string msg,char lineSign, short Xpadding, short Ypadding)
 {
     short width = (msg.length()) + (Xpadding * 2);
     std::cout << output_helpers::repeat(lineSign, width) << output_helpers::repeat('\n', Ypadding);
@@ -17,13 +26,13 @@ void Ui_helpers::header(string title)
     alert(title,'#',20,2);
 }
 
-void Ui_helpers::menu(string menuTitle= "Menu", vector<string> menuItems={},short leftMargin=-1)
+void Ui_helpers::menu(string menuTitle, vector<string> menuItems,short leftMargin)
 {
     short Lmargin = leftMargin;
 
     if (leftMargin==-1)
     {
-        Lmargin = menuTitle.length() + 2;
+        Lmargin = menuTitle.length() + 1;
     }
     
     if(menuTitle != "")
@@ -42,7 +51,8 @@ void Ui_helpers::menu(string menuTitle= "Menu", vector<string> menuItems={},shor
 //====================        Fields            ========================
 //======================================================================
 
-int Ui_helpers::intField(string label="Please enter a number : \n",int min = INT_MIN, int max = INT_MAX,string errorMsg="Number out of range!\n") {
+int Ui_helpers::intField(string label,int min, int max ,string errorMsg)
+{
     long long num = 0;
     bool error = false;
 
@@ -59,7 +69,7 @@ int Ui_helpers::intField(string label="Please enter a number : \n",int min = INT
     return num;
 }
 
-string Ui_helpers::textField(string label="Please enter a text : \n")
+string Ui_helpers::textField(string label)
 {
     string stringInput;
     std::cout << label;
@@ -67,7 +77,7 @@ string Ui_helpers::textField(string label="Please enter a text : \n")
     return stringInput;
 }
 
-bool Ui_helpers::confirmField(string label="Do you agree (Y/N): \n", vector<string> passCases={"y","Y"})
+bool Ui_helpers::confirmField(string label, vector<string> passCases)
 {
     string answer=textField(label);
 
@@ -82,7 +92,7 @@ bool Ui_helpers::confirmField(string label="Do you agree (Y/N): \n", vector<stri
     return false;
 }
 
-short Ui_helpers::selectField(string label="Select choice : \n",short menuSize=0,string errorMsg="inValid choice => select another one.\n")
+short Ui_helpers::selectField(short menuSize,string label,string errorMsg)
 {
     short answer=intField(label,1,menuSize,errorMsg);
     return answer;

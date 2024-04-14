@@ -17,7 +17,7 @@ long long Input_helpers::readInt()
     return input;
 }
 
-bool Input_helpers::isIntInRange(int num,int min=INT_MIN,int max=INT_MAX)
+bool Input_helpers::isIntInRange(int num,int min,int max)
 {
     return (num >= min && num <= max);
 }

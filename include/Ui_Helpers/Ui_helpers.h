@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-#include "libs/I_Helpers/Input_helpers.h"
-#include "libs/O_Helpers/output_helpers.h"
+#include "../libs/I_Helpers/Input_helpers.h"
+#include "../libs/O_Helpers/output_helpers.h"
 #include <vector>
 
 using std::string;
@@ -15,25 +15,31 @@ public:
 
 
     //======================================================================
+    //==================        UI manips             ======================
+    //======================================================================
+    static void clear();
+
+    //======================================================================
     //==================        Components            ======================
     //======================================================================
 
-    static void alert(string msg,char lineSign, short Xpadding, short Ypadding);
+    static void alert(string msg="Welcome here.",char lineSign='=', short Xpadding = 15, short Ypadding = 1);
     
     static void header(string title);
 
-    static void menu(string menuTitle, vector<string> menuItems,short leftMargin);
+    static void menu(string menuTitle= "Menu", vector<string> menuItems={},short leftMargin=-1);
     
     //======================================================================
     //====================        Fields            ========================
     //======================================================================
 
-    static int intField(string label,int min = INT_MIN, int max ,string errorMsg);
-    static string textField(string label);
+    static int intField(string label="Please enter a number : \n",int min = INT_MIN, int max = INT_MAX,string errorMsg="Number out of range!\n");
 
-    static bool confirmField(string label, vector<string> passCases);
+    static string textField(string label="Please enter a text : \n");
 
-    static short selectField(string label,short menuSize,string errorMsg);
+    static bool confirmField(string label="Do you agree (Y/N): \n", vector<string> passCases={"y","Y"});
+
+    static short selectField(short menuSize,string label="Select option : ",string errorMsg="!nValid choice, select another one.\n");
 
 };
 

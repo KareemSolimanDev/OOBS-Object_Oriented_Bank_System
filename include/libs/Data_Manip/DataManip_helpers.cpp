@@ -1,7 +1,7 @@
 #include "DataManip_helpers.h"
 
 
-vector<string> DataManip_helpers::SplitWords(string sentence, string delim=" ")
+vector<string> DataManip_helpers::SplitWords(string sentence, string delim)
 {
 
     // this case found during testing
@@ -27,7 +27,7 @@ vector<string> DataManip_helpers::SplitWords(string sentence, string delim=" ")
     return words;
 }
 
-string DataManip_helpers::JoinWords(vector<string> words, string delim=" ")
+string DataManip_helpers::JoinWords(vector<string> words, string delim)
 {
     string  sentence= "";
 

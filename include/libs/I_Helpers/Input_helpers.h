@@ -16,7 +16,7 @@ public:
     
     static long long readInt();
 
-    static bool isIntInRange(int num,int min,int max);
+    static bool isIntInRange(int num,int min=INT_MIN,int max=INT_MAX);
 
 };
 #include "Input_helpers.cpp"
