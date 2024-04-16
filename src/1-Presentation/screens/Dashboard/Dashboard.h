@@ -20,7 +20,7 @@ private:
     {
         ShowClientsList = 1,
         ClientsOperations,
-        Transactions,
+        goTransactions,
         AdminOperations,
         Logs,
         Logout,

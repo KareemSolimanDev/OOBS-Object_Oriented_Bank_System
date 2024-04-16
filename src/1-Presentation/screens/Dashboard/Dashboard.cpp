@@ -1,6 +1,8 @@
 #include "Dashboard.h"
 // all we need iostream ..etc in .h file above
 #include "../ClientsOps/ClientsOps.h"
+#include "../AdminsOps/AdminsOps.h"
+#include "../Transactions/Transactions.h"
 // read impelimintation.md document to get some notes
 
 void Dashboard::displayContent()
@@ -11,6 +13,8 @@ void Dashboard::displayContent()
 void Dashboard::CallSuitableProcess(DashboardChoices choice)
 {
     ClientsOps clientsOps;
+    AdminsOps adminsOps;
+    Transactions transactions;
 
     Ui_helpers::clear();
     switch (choice)
@@ -22,13 +26,11 @@ void Dashboard::CallSuitableProcess(DashboardChoices choice)
     case DashboardChoices::ClientsOperations:
         clientsOps.show();
         break;
-    case DashboardChoices::Transactions:
-        Ui_helpers::alert("Transactions screen will be here");
-        goDashboard();
+    case DashboardChoices::goTransactions:
+        transactions.show();
         break;
     case DashboardChoices::AdminOperations:
-        Ui_helpers::alert("Admin Operations screen will be here");
-        goDashboard();
+        adminsOps.show();
         break;
     case DashboardChoices::Logs:
         Ui_helpers::alert("Logs screen will be here");
