@@ -1,13 +1,13 @@
 #include <iostream>
-#include "1-Presentation/screens/MainMenu/MainMenu.h"
+#include "1-Presentation/screens/Dashboard/Dashboard.h"
 
 
 
 int main()
 {
 
-    MainMenu Dashboard;
-    Dashboard.show();
+    Dashboard dashboard;
+    dashboard.show();
 
     return 0;
 }

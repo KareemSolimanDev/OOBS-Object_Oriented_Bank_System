@@ -10,12 +10,13 @@ using std::vector;
 using std::cout;
 
 
-class MainMenu : protected BaseScreen
+class Dashboard : protected BaseScreen
 {
 private:
-    vector<string> _menuItems;
+    string _title = "Dashboard";
+    vector<string> _menuItems = {"Show Clients List", "Client Operations", "Transactions", "Admin Operations", "logs", "Logout"};
 
-    enum MainChoices
+    enum DashboardChoices
     {
         ShowClientsList = 1,
         ClientsOperations,
@@ -27,11 +28,11 @@ private:
 
     void displayContent();
     void handelInput();
-    void CallSuitableProcess(MainChoices choice);
+    void CallSuitableProcess(DashboardChoices choice);
 
 public:
 
     void show() override;
-    void goMainMenu(bool load=true);
+    void goDashboard(bool load=true);
 };
-#include "MainMenu.cpp"
+#include "Dashboard.cpp"
