@@ -3,6 +3,8 @@
 #include "../Dashboard/Dashboard.h"
 // read impelimintation.md document to get some notes
 
+using Screen::Transactions;
+
 void Transactions::displayContent()
 {
     Ui_helpers::menu("the Operations",_menuItems);
@@ -10,25 +12,24 @@ void Transactions::displayContent()
 
 void Transactions::CallSuitableProcess(TransactionsChoices choice)
 {
-    Dashboard dashboard;
 
     Ui_helpers::clear();
     switch (choice)
     {
-    case TransactionsChoices::GoDashboard:
-        dashboard.goDashboard(false);
+    case TransactionsChoices::goDashboard:
+        Dashboard();
         break;
-    case TransactionsChoices::TotalBalance:
+    case TransactionsChoices::goTotalBalance:
         Ui_helpers::alert("Total Balance screen will be here");
-        goTransactions();
+        Transactions(true);
         break;
-    case TransactionsChoices::Withdraw:
+    case TransactionsChoices::goWithdraw:
         Ui_helpers::alert("Withdraw screen will be here");
-        goTransactions();
+        Transactions(true);
         break;
-    case TransactionsChoices::Deposite:
+    case TransactionsChoices::goDeposite:
         Ui_helpers::alert("Deposite screen will be here");
-        goTransactions();
+        Transactions(true);
         break;
     default:
         break;
@@ -51,7 +52,8 @@ void Transactions::show()
     handelInput();
 }
 
-void Transactions::goTransactions(bool load)
+// constructor
+Transactions::Transactions(bool load)
 {
     if (load)
     {

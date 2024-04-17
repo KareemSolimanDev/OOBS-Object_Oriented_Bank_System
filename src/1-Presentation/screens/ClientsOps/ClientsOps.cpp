@@ -3,6 +3,8 @@
 #include "../Dashboard/Dashboard.h"
 // read impelimintation.md document to get some notes
 
+using Screen::ClientsOps;
+
 void ClientsOps::displayContent()
 {
     Ui_helpers::menu("the Operations",_menuItems);
@@ -10,33 +12,32 @@ void ClientsOps::displayContent()
 
 void ClientsOps::CallSuitableProcess(ClientsOpsChoices choice)
 {
-    Dashboard dashboard;
 
     Ui_helpers::clear();
     switch (choice)
     {
-    case ClientsOpsChoices::GoDashboard:
-        dashboard.goDashboard(false);
+    case ClientsOpsChoices::goDashboard:
+        Dashboard();
         break;
-    case ClientsOpsChoices::AddClient:
+    case ClientsOpsChoices::goAddClient:
         Ui_helpers::alert("Add Client screen will be here");
-        goClientsOps();
+        ClientsOps(true);
         break;
-    case ClientsOpsChoices::UpdateClient:
+    case ClientsOpsChoices::goUpdateClient:
         Ui_helpers::alert("Update Client screen will be here");
-        goClientsOps();
+        ClientsOps(true);
         break;
-    case ClientsOpsChoices::DeleteClient:
+    case ClientsOpsChoices::goDeleteClient:
         Ui_helpers::alert("Delete Client screen will be here");
-        goClientsOps();
+        ClientsOps(true);
         break;
-    case ClientsOpsChoices::FindClient:
+    case ClientsOpsChoices::goFindClient:
         Ui_helpers::alert("Find Client screen will be here");
-        goClientsOps();
+        ClientsOps(true);
         break;
-    case ClientsOpsChoices::ListClients:
+    case ClientsOpsChoices::goListClients:
         Ui_helpers::alert("List Clients screen will be here");
-        goClientsOps();
+        ClientsOps(true);
         break;
     default:
         break;
@@ -59,7 +60,8 @@ void ClientsOps::show()
     handelInput();
 }
 
-void ClientsOps::goClientsOps(bool load)
+// constructor
+ClientsOps::ClientsOps(bool load)
 {
     if (load)
     {

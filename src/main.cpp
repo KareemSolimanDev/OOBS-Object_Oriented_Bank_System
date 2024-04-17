@@ -6,8 +6,7 @@
 int main()
 {
 
-    Dashboard dashboard;
-    dashboard.show();
+    Screen::Dashboard();
 
     return 0;
 }

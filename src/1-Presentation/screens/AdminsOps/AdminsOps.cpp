@@ -3,6 +3,8 @@
 #include "../Dashboard/Dashboard.h"
 // read impelimintation.md document to get some notes
 
+using Screen::AdminsOps;
+
 void AdminsOps::displayContent()
 {
     Ui_helpers::menu("the Operations",_menuItems);
@@ -10,33 +12,32 @@ void AdminsOps::displayContent()
 
 void AdminsOps::CallSuitableProcess(AdminsOpsChoices choice)
 {
-    Dashboard dashboard;
 
     Ui_helpers::clear();
     switch (choice)
     {
-    case AdminsOpsChoices::GoDashboard:
-        dashboard.goDashboard(false);
+    case AdminsOpsChoices::goDashboard:
+        Dashboard();
         break;
-    case AdminsOpsChoices::AddAdmin:
+    case AdminsOpsChoices::goAddAdmin:
         Ui_helpers::alert("Add Admin screen will be here");
-        goAdminsOps();
+        AdminsOps(true);
         break;
-    case AdminsOpsChoices::UpdateAdmin:
+    case AdminsOpsChoices::goUpdateAdmin:
         Ui_helpers::alert("Update Admin screen will be here");
-        goAdminsOps();
+        AdminsOps(true);
         break;
-    case AdminsOpsChoices::DeleteAdmin:
+    case AdminsOpsChoices::goDeleteAdmin:
         Ui_helpers::alert("Delete Admin screen will be here");
-        goAdminsOps();
+        AdminsOps(true);
         break;
-    case AdminsOpsChoices::FindAdmin:
+    case AdminsOpsChoices::goFindAdmin:
         Ui_helpers::alert("Find Admin screen will be here");
-        goAdminsOps();
+        AdminsOps(true);
         break;
-    case AdminsOpsChoices::ListAdmins:
+    case AdminsOpsChoices::goListAdmins:
         Ui_helpers::alert("List Admins screen will be here");
-        goAdminsOps();
+        AdminsOps(true);
         break;
     default:
         break;
@@ -59,7 +60,8 @@ void AdminsOps::show()
     handelInput();
 }
 
-void AdminsOps::goAdminsOps(bool load)
+// constructor
+AdminsOps::AdminsOps(bool load)
 {
     if (load)
     {

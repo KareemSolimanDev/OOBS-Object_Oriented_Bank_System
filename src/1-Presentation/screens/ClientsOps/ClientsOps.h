@@ -9,30 +9,32 @@ using std::string;
 using std::vector;
 using std::cout;
 
-
-class ClientsOps : protected BaseScreen
+namespace Screen
 {
-private:
-    string _title = "Clients Operations";
-    vector<string> _menuItems={"Dashboard", "add Client", "update Client", "delete Client", "find Client", "list Clients"};
-
-    enum ClientsOpsChoices
+    class ClientsOps : protected BaseScreen
     {
-        GoDashboard= 1,
-        AddClient,
-        UpdateClient,
-        DeleteClient,
-        FindClient,
-        ListClients,
+    private:
+        string _title = "Clients Operations";
+        vector<string> _menuItems={"Dashboard", "add Client", "update Client", "delete Client", "find Client", "list Clients"};
+
+        enum ClientsOpsChoices
+        {
+            goDashboard= 1,
+            goAddClient,
+            goUpdateClient,
+            goDeleteClient,
+            goFindClient,
+            goListClients,
+        };
+
+        void displayContent();
+        void handelInput();
+        void CallSuitableProcess(ClientsOpsChoices choice);
+        void show() override;
+
+    public:
+
+        ClientsOps(bool load=false);
     };
-
-    void displayContent();
-    void handelInput();
-    void CallSuitableProcess(ClientsOpsChoices choice);
-
-public:
-
-    void show() override;
-    void goClientsOps(bool load=true);
-};
+} // namespace Screen
 #include "ClientsOps.cpp"

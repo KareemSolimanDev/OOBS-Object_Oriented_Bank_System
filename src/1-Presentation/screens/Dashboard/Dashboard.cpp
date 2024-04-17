@@ -5,6 +5,8 @@
 #include "../Transactions/Transactions.h"
 // read impelimintation.md document to get some notes
 
+using Screen::Dashboard;
+
 void Dashboard::displayContent()
 {
     Ui_helpers::menu((_title+" Options"),_menuItems);
@@ -12,33 +14,30 @@ void Dashboard::displayContent()
 
 void Dashboard::CallSuitableProcess(DashboardChoices choice)
 {
-    ClientsOps clientsOps;
-    AdminsOps adminsOps;
-    Transactions transactions;
 
     Ui_helpers::clear();
     switch (choice)
     {
-    case DashboardChoices::ShowClientsList:
+    case DashboardChoices::goShowClientsList:
         Ui_helpers::alert(" Show Clients List screen will be here");
-        goDashboard();
+        Dashboard(true); // call Dashboard screen
         break;
-    case DashboardChoices::ClientsOperations:
-        clientsOps.show();
+    case DashboardChoices::goClientsOperations:
+        Screen::ClientsOps();
         break;
     case DashboardChoices::goTransactions:
-        transactions.show();
+        Screen::Transactions();
         break;
-    case DashboardChoices::AdminOperations:
-        adminsOps.show();
+    case DashboardChoices::goAdminOperations:
+        Screen::AdminsOps();
         break;
-    case DashboardChoices::Logs:
+    case DashboardChoices::goLogs:
         Ui_helpers::alert("Logs screen will be here");
-        goDashboard();
+        Dashboard(true);
         break;
-    case DashboardChoices::Logout:
+    case DashboardChoices::goLogout:
         Ui_helpers::alert("Logout screen will be here");
-        goDashboard();
+        Dashboard(true);
         break;
     default:
         break;
@@ -61,7 +60,8 @@ void Dashboard::show()
     handelInput();
 }
 
-void Dashboard::goDashboard(bool load)
+// constructor
+Dashboard::Dashboard(bool load)
 {
     if (load)
     {

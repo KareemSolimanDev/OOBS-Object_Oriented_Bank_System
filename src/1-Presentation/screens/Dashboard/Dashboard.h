@@ -9,30 +9,31 @@ using std::string;
 using std::vector;
 using std::cout;
 
-
-class Dashboard : protected BaseScreen
+namespace Screen
 {
-private:
-    string _title = "Dashboard";
-    vector<string> _menuItems = {"Show Clients List", "Client Operations", "Transactions", "Admin Operations", "logs", "Logout"};
-
-    enum DashboardChoices
+    class Dashboard : protected BaseScreen
     {
-        ShowClientsList = 1,
-        ClientsOperations,
-        goTransactions,
-        AdminOperations,
-        Logs,
-        Logout,
+    private:
+        string _title = "Dashboard";
+        vector<string> _menuItems = {"Show Clients List", "Client Operations", "Transactions", "Admin Operations", "logs", "Logout"};
+
+        enum DashboardChoices
+        {
+            goShowClientsList = 1,
+            goClientsOperations,
+            goTransactions,
+            goAdminOperations,
+            goLogs,
+            goLogout,
+        };
+
+        void displayContent();
+        void handelInput();
+        void CallSuitableProcess(DashboardChoices choice);
+        void show() override;
+
+    public:
+        Dashboard(bool load=false);
     };
-
-    void displayContent();
-    void handelInput();
-    void CallSuitableProcess(DashboardChoices choice);
-
-public:
-
-    void show() override;
-    void goDashboard(bool load=true);
-};
+} // namespace Screen
 #include "Dashboard.cpp"

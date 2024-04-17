@@ -9,28 +9,29 @@ using std::string;
 using std::vector;
 using std::cout;
 
-
-class Transactions : protected BaseScreen
+namespace Screen
 {
-private:
-    string _title = "Transactions";
-    vector<string> _menuItems={"Dashboard", "total Balance", "withdraw", "deposite"};
-
-    enum TransactionsChoices
+    class Transactions : protected BaseScreen
     {
-        GoDashboard= 1,
-        TotalBalance,
-        Withdraw,
-        Deposite,
+    private:
+        string _title = "Transactions";
+        vector<string> _menuItems={"Dashboard", "total Balance", "withdraw", "deposite"};
+
+        enum TransactionsChoices
+        {
+            goDashboard= 1,
+            goTotalBalance,
+            goWithdraw,
+            goDeposite,
+        };
+
+        void displayContent();
+        void handelInput();
+        void CallSuitableProcess(TransactionsChoices choice);
+        void show() override;
+
+    public:
+        Transactions(bool load=false);
     };
-
-    void displayContent();
-    void handelInput();
-    void CallSuitableProcess(TransactionsChoices choice);
-
-public:
-
-    void show() override;
-    void goTransactions(bool load=true);
-};
+} // namespace Screen
 #include "Transactions.cpp"
