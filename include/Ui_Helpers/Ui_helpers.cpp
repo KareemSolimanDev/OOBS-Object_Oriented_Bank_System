@@ -21,6 +21,11 @@ void Ui_helpers::alert(string msg,char lineSign, short Xpadding, short Ypadding)
     std::cout << output_helpers::repeat(lineSign, width) << std::endl;
 }
 
+void Ui_helpers::warning(string title)
+{
+    alert(title,'!',20);
+}
+
 void Ui_helpers::header(string title)
 {
     alert(title,'#',20,2);

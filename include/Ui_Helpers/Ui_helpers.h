@@ -25,6 +25,8 @@ public:
 
     static void alert(string msg="Welcome here.",char lineSign='=', short Xpadding = 15, short Ypadding = 1);
     
+    static void warning(string title);
+
     static void header(string title);
 
     static void menu(string menuTitle= "Menu", vector<string> menuItems={},short leftMargin=-1);

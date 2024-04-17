@@ -4,6 +4,7 @@
 #include "../AdminsOpsMenu/AdminsOps.h"
 #include "../TransactionsMenu/Transactions.h"
 #include "../LogsMenu/Logs.h"
+#include "../Logout/Logout.h"
 // read impelimintation.md document to get some notes
 
 using Screen::Dashboard;
@@ -36,8 +37,12 @@ void Dashboard::CallSuitableProcess(DashboardChoices choice)
         Screen::Logs();
         break;
     case DashboardChoices::goLogout:
-        Ui_helpers::alert("Logout screen will be here");
-        Dashboard(true);
+        if(Ui_helpers::confirmField("Do you really want to logout (y/n): "))
+        {
+            Screen::Logout();
+        }else{
+            Dashboard();
+        }
         break;
     default:
         break;
