@@ -1,8 +1,9 @@
 #include "Dashboard.h"
 // all we need iostream ..etc in .h file above
-#include "../ClientsOps/ClientsOps.h"
-#include "../AdminsOps/AdminsOps.h"
-#include "../Transactions/Transactions.h"
+#include "../ClientsOpsMenu/ClientsOps.h"
+#include "../AdminsOpsMenu/AdminsOps.h"
+#include "../TransactionsMenu/Transactions.h"
+#include "../LogsMenu/Logs.h"
 // read impelimintation.md document to get some notes
 
 using Screen::Dashboard;
@@ -32,8 +33,7 @@ void Dashboard::CallSuitableProcess(DashboardChoices choice)
         Screen::AdminsOps();
         break;
     case DashboardChoices::goLogs:
-        Ui_helpers::alert("Logs screen will be here");
-        Dashboard(true);
+        Screen::Logs();
         break;
     case DashboardChoices::goLogout:
         Ui_helpers::alert("Logout screen will be here");
