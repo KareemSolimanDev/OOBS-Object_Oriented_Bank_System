@@ -1,6 +1,7 @@
 #include "Login.h"
 // all we need iostream ..etc in .h file above
 #include "../Dashboard/Dashboard.h"
+#include "../../../2-Business/Admin/Admin.h"
 // read impelimintation.md document to get some notes
 
 using Screen::Login;
@@ -14,7 +15,7 @@ void Login::handelLoginData()
     string usrename=Ui_helpers::textField("Please enter username : ");
     string password=Ui_helpers::textField("Please enter password : ");
 
-    if (usrename=="admin"&&password=="1234")
+    if (Admin::isValid(usrename,password))
     {
         Screen::Dashboard();
     }else{

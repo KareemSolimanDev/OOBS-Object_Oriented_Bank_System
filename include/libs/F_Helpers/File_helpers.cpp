@@ -20,3 +20,17 @@ void File_helpers::WriteDataOnFile(string fileName, vector<string> newData)
     }
     File.close();
 }
+
+vector<string> File_helpers::GetDataFromFile(string fileName)
+{
+    std::fstream File;
+    string Data;
+    vector<string> vData;
+    File.open(fileName, std::ios::in);
+    while (getline(File, Data))
+    {
+        vData.push_back(Data);
+    }
+    File.close();
+    return vData;
+}

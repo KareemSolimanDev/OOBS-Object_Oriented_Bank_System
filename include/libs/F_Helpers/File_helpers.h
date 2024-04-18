@@ -14,5 +14,7 @@ public:
     static void AppendDataToFile(string fileName, string Data);
 
     static void WriteDataOnFile(string fileName, vector<string> newData);
+
+    static vector<string> GetDataFromFile(string fileName);
 };
 #include "File_helpers.cpp"
