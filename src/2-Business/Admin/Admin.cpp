@@ -1,22 +1,36 @@
 #include "Admin.h"
 
 
-bool Admin::isValid(string username,string password)
+AdminInfos Admin::getInfos()
+{
+    return {_name,_username,_email,_phone,_password,_permissions};
+}
+
+vector<AdminInfos> Admin::formatAdminsData(vector<string> adminsData)
+{
+    vector<AdminInfos> FAdmins;
+    vector<string> record;
+    for (string adminData : adminsData )
+    {
+        record=DataManip_helpers::SplitWords(adminData,",");
+        //                | name     | username | email     | phone    | password  | permissions
+        FAdmins.push_back({ record[0], record[1], record[2],  record[3], record[4],  short(stoi(record[5]))});
+    }
+    return FAdmins;
+}
+
+
+bool Admin::login(string username,string password)
 {
     vector<string> adminsData=Bank::loadAdminsData();
-    vector<string> record;
-    string uname;
-    string pword;
-    for (string i : adminsData )
+    vector<AdminInfos> adminsInfos=formatAdminsData(adminsData);
+
+    for (AdminInfos adminInfos : adminsInfos )
     {
-        record=DataManip_helpers::SplitWords(i,",");
-        uname=record[1]; // username possition
-        pword=record[4]; // password possition
-        if (username==uname && password==pword)
+        if (adminInfos.username==username && adminInfos.password==password)
         {
             return true;
         }
-        
     }
     return false;
 }

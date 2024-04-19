@@ -8,15 +8,30 @@
 using std::string;
 using std::vector;
 
+struct AdminInfos
+{
+    string name;
+    string username;
+    string email;
+    string phone;
+    string password;
+    short permissions;
+};
+
 class Admin : protected Person
 {
 private:
+    string _name;
     string _username;
+    string _email;
+    string _phone;
     string _password;
     short _permissions;
+    static vector<AdminInfos> formatAdminsData(vector<string> Data);
 public:
 
-    static bool isValid(string username,string password);
+    AdminInfos getInfos();
+    static bool login(string username,string password);
 
 };
 

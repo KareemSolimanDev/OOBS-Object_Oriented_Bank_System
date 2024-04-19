@@ -15,7 +15,7 @@ void Login::handelLoginData()
     string usrename=Ui_helpers::textField("Please enter username : ");
     string password=Ui_helpers::textField("Please enter password : ");
 
-    if (Admin::isValid(usrename,password))
+    if (Admin::login(usrename,password))
     {
         Screen::Dashboard();
     }else{
