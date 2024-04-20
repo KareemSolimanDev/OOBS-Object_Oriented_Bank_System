@@ -11,7 +11,7 @@ using std::vector;
 class Bank
 {
 public:
-
+    static bool saveRecord(string record);
     static vector<string> loadAdminsData();
 };
 

@@ -1,6 +1,7 @@
 #include "AdminsOps.h"
 // all we need iostream ..etc in .h file above
 #include "../Dashboard/Dashboard.h"
+#include "../AddAdmin/AddAdmin.h"
 // read impelimintation.md document to get some notes
 
 using Screen::AdminsOps;
@@ -20,7 +21,7 @@ void AdminsOps::CallSuitableProcess(AdminsOpsChoices choice)
         Dashboard();
         break;
     case AdminsOpsChoices::goAddAdmin:
-        Ui_helpers::alert("Add Admin screen will be here");
+        AddAdmin();
         AdminsOps(true);
         break;
     case AdminsOpsChoices::goUpdateAdmin:
