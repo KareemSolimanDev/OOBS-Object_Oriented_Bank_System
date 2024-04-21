@@ -27,12 +27,13 @@ private:
     static AdminInfos convertRecordToInfos(string adminRecord);
     static string convertInfosToRecord(AdminInfos adminInfos);
     static vector<AdminInfos> formatAdminsData(vector<string> Data);
-    static vector<AdminInfos> loadAdminsInfo();
 public:
 
     Admin(AdminInfos infos);
     AdminInfos getInfos();
     bool save();
+    static vector<AdminInfos> loadAdminsInfo();
+    static AdminInfos getAdminInfo(string username);
     static bool isExist(string username);
     static bool login(string username,string password);
 

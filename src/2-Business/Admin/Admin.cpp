@@ -53,6 +53,19 @@ vector<AdminInfos> Admin::loadAdminsInfo()
     return adminsInfos;
 }
 
+AdminInfos Admin::getAdminInfo(string username)
+{
+    vector<AdminInfos> adminsInfos=loadAdminsInfo();
+    for (AdminInfos adminInfos : adminsInfos )
+    {
+        if (adminInfos.username==username)
+        {
+            return adminInfos;
+        }
+    }
+    return {};
+}
+
 bool Admin::isExist(string username)
 {
     vector<AdminInfos> adminsInfos=loadAdminsInfo();

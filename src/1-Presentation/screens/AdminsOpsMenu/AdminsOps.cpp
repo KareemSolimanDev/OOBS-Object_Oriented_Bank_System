@@ -2,6 +2,8 @@
 // all we need iostream ..etc in .h file above
 #include "../Dashboard/Dashboard.h"
 #include "../AddAdmin/AddAdmin.h"
+#include "../AdminsList/AdminsList.h"
+#include "../FindAdmin/FindAdmin.h"
 // read impelimintation.md document to get some notes
 
 using Screen::AdminsOps;
@@ -33,11 +35,11 @@ void AdminsOps::CallSuitableProcess(AdminsOpsChoices choice)
         AdminsOps(true);
         break;
     case AdminsOpsChoices::goFindAdmin:
-        Ui_helpers::alert("Find Admin screen will be here");
+        FindAdmin();
         AdminsOps(true);
         break;
     case AdminsOpsChoices::goListAdmins:
-        Ui_helpers::alert("List Admins screen will be here");
+        AdminsList();
         AdminsOps(true);
         break;
     default:
