@@ -12,6 +12,7 @@ class Bank
 {
 public:
     static bool saveRecord(string record);
+    static bool updateData(vector<string> Data);
     static vector<string> loadAdminsData();
 };
 

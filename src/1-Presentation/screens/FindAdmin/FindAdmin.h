@@ -15,7 +15,7 @@ namespace Screen
     {
 
     private:
-        string _title="Admins List Screen";
+        string _title="Find Admin Screen";
 
         void handelContent();
         void displayContent();

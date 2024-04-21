@@ -100,3 +100,22 @@ bool Admin::save()
     string record=convertInfosToRecord(getInfos());
     return Bank::saveRecord(record);
 }
+
+bool Admin::asUpdateTo(string username)
+{
+    AdminInfos newInfos=getInfos();
+    vector<AdminInfos> adminsInfos=loadAdminsInfo();
+    vector<string> newAdminsInfos;
+
+    
+    for (AdminInfos &admin : adminsInfos)
+    {
+        if (admin.username==username)
+        {
+            admin=newInfos;
+        }
+        newAdminsInfos.push_back(convertInfosToRecord(admin));
+    }
+
+    return Bank::updateData(newAdminsInfos);
+}

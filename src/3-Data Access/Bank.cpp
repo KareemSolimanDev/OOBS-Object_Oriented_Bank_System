@@ -18,3 +18,16 @@ vector<string> Bank::loadAdminsData()
 {
     return File_helpers::GetDataFromFile(Path::Admins_F);
 }
+
+bool Bank::updateData(vector<string> Data)
+{
+    try
+    {
+        File_helpers::WriteDataOnFile(Path::Admins_F,Data);
+    }
+    catch(const std::exception& e)
+    {
+        return false;
+    }
+    return true;
+}
