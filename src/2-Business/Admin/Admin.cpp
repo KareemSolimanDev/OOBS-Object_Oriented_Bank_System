@@ -119,3 +119,24 @@ bool Admin::asUpdateTo(string username)
 
     return Bank::updateData(newAdminsInfos);
 }
+
+bool Admin::deleteAdmin(string username)
+{
+    vector<AdminInfos> adminsInfos=loadAdminsInfo();
+    vector<string> newAdminsInfos;
+    short posToDelete;
+    short counter=0;
+    
+    for (AdminInfos &admin : adminsInfos)
+    {
+        counter++;
+        if (admin.username==username)
+        {
+            posToDelete=counter;
+        }
+        newAdminsInfos.push_back(convertInfosToRecord(admin));
+    }
+
+    newAdminsInfos.erase(newAdminsInfos.begin()+posToDelete);
+    return Bank::updateData(newAdminsInfos);
+}

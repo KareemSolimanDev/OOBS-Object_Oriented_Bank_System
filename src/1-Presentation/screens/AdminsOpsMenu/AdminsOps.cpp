@@ -5,6 +5,7 @@
 #include "../AdminsList/AdminsList.h"
 #include "../FindAdmin/FindAdmin.h"
 #include "../UpdateAdmin/UpdateAdmin.h"
+#include "../DeleteAdmin/DeleteAdmin.h"
 // read impelimintation.md document to get some notes
 
 using Screen::AdminsOps;
@@ -32,7 +33,7 @@ void AdminsOps::CallSuitableProcess(AdminsOpsChoices choice)
         AdminsOps(true);
         break;
     case AdminsOpsChoices::goDeleteAdmin:
-        Ui_helpers::alert("Delete Admin screen will be here");
+        DeleteAdmin();
         AdminsOps(true);
         break;
     case AdminsOpsChoices::goFindAdmin:

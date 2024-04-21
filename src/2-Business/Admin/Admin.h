@@ -33,6 +33,7 @@ public:
     AdminInfos getInfos();
     bool save();
     bool asUpdateTo(string username);
+    static bool deleteAdmin(string username);
     static vector<AdminInfos> loadAdminsInfo();
     static AdminInfos getAdminInfo(string username);
     static bool isExist(string username);
