@@ -12,8 +12,10 @@ class Bank
 {
 public:
     static bool saveRecord(string record);
+    static bool saveAdminLog(string log);
     static bool updateData(vector<string> Data);
     static vector<string> loadAdminsData();
+    static vector<string> loadAdminsLog();
 };
 
 #include "Bank.cpp"

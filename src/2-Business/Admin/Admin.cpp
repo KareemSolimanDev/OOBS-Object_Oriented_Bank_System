@@ -15,7 +15,22 @@ string Admin::convertInfosToRecord(AdminInfos adminInfos)
     return DataManip_helpers::JoinWords(SData,",");
 }
 
+AdminLogInfos Admin::convertLogToInfos(string adminLog)
+{
+    vector<string> log=DataManip_helpers::SplitWords(adminLog,",");
+    //     | date  | time  | name  |username| email | phon  | permissions
+    return { log[0], log[1], log[2],log[3],   log[4], log[5], short(stoi(log[6]))};
+    
+}
 
+string Admin::convertInfosToLog(AdminInfos adminInfos)
+{
+    vector<string> SData= {  Date::getFormatedDate(),Date::getFormatedTime()
+                            ,adminInfos.name,adminInfos.username,adminInfos.email
+                            ,adminInfos.phone,std::to_string(adminInfos.permissions)};
+
+    return DataManip_helpers::JoinWords(SData,",");
+}
 
 AdminInfos Admin::getInfos()
 {
@@ -46,10 +61,29 @@ vector<AdminInfos> Admin::formatAdminsData(vector<string> adminsData)
     return FAdmins;
 }
 
+vector<AdminLogInfos> Admin::formatAdminsLogData(vector<string> adminsData)
+{
+    vector<AdminLogInfos> FAdmins;
+    AdminLogInfos infos;
+    for (string adminData : adminsData )
+    {
+        infos=convertLogToInfos(adminData);
+        FAdmins.push_back(infos);
+    }
+    return FAdmins;
+}
+
 vector<AdminInfos> Admin::loadAdminsInfo()
 {
     vector<string> adminsData=Bank::loadAdminsData();
     vector<AdminInfos> adminsInfos=formatAdminsData(adminsData);
+    return adminsInfos;
+}
+
+vector<AdminLogInfos> Admin::loadAdminsLog()
+{
+    vector<string> adminsData=Bank::loadAdminsLog();
+    vector<AdminLogInfos> adminsInfos=formatAdminsLogData(adminsData);
     return adminsInfos;
 }
 
@@ -89,6 +123,7 @@ bool Admin::login(string username,string password)
         if (adminInfos.username==username && adminInfos.password==password)
         {
             __CurrentAdmin__=adminInfos;
+            Admin::log(username);
             return true;
         }
     }
@@ -139,4 +174,11 @@ bool Admin::deleteAdmin(string username)
 
     newAdminsInfos.erase(newAdminsInfos.begin()+posToDelete);
     return Bank::updateData(newAdminsInfos);
+}
+
+bool Admin::log(string username)
+{
+    AdminInfos adminsInfos=getAdminInfo(username);
+    
+    return Bank::saveAdminLog(convertInfosToLog(adminsInfos));
 }

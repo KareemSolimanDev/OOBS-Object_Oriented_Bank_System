@@ -1,6 +1,7 @@
 #include "Logs.h"
 // all we need iostream ..etc in .h file above
 #include "../Dashboard/Dashboard.h"
+#include "../AdminsLog/AdminsLog.h"
 // read impelimintation.md document to get some notes
 
 using Screen::Logs;
@@ -20,7 +21,7 @@ void Logs::CallSuitableProcess(LogsChoices choice)
         Dashboard();
         break;
     case LogsChoices::goAdminsLoginLog:
-        Ui_helpers::alert("Admins Login Log screen will be here");
+        Screen::AdminsLog();
         Logs(true);
         break;
     case LogsChoices::goTransactionsLog:
