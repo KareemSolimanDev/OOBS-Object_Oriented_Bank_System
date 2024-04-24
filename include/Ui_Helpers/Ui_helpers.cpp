@@ -64,7 +64,25 @@ int Ui_helpers::intField(string label,int min, int max ,string errorMsg)
     do {
         std::cout << label;
         num=Input_helpers::readInt();
-        error = !Input_helpers::isIntInRange(num,min,max);
+        error = !Input_helpers::isNumInRange(num,(long long)min,(long long)max);
+
+        if (error) {
+            std::cout << errorMsg << std::endl;
+        }
+    } while (error);
+
+    return num;
+}
+
+float Ui_helpers::floatField(string label,float min, float max ,string errorMsg)
+{
+    double num = 0;
+    bool error = false;
+
+    do {
+        std::cout << label;
+        num=Input_helpers::readFloat();
+        error = !Input_helpers::isNumInRange(num,(double)min,(double)max);
 
         if (error) {
             std::cout << errorMsg << std::endl;

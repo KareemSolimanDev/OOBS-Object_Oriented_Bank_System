@@ -11,10 +11,13 @@ using std::vector;
 class Bank
 {
 public:
-    static bool saveRecord(string record);
+    static bool saveAdminRecord(string record);
+    static bool saveClientRecord(string record);
     static bool saveAdminLog(string log);
-    static bool updateData(vector<string> Data);
+    static bool updateAdminData(vector<string> Data);
+    static bool updateClientData(vector<string> Data);
     static vector<string> loadAdminsData();
+    static vector<string> loadClientsData();
     static vector<string> loadAdminsLog();
 };
 

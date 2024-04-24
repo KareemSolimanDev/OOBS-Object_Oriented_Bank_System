@@ -37,6 +37,8 @@ public:
 
     static int intField(string label="Please enter a number : \n",int min = INT_MIN, int max = INT_MAX,string errorMsg="Number out of range!\n");
 
+    static float floatField(string label="Please enter a number : \n",float min = __FLT_MIN__, float max = __FLT_MAX__,string errorMsg="Number out of range!\n");
+
     static string textField(string label="Please enter a text : \n");
 
     static bool confirmField(string label="Do you agree (Y/N): \n", vector<string> passCases={"y","Y"});

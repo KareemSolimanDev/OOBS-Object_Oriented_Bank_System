@@ -16,7 +16,10 @@ public:
     
     static long long readInt();
 
-    static bool isIntInRange(int num,int min=INT_MIN,int max=INT_MAX);
+    static double readFloat();
+
+    template<typename T>
+    static bool isNumInRange(T num,T min,T max);
 
 };
 #include "Input_helpers.cpp"

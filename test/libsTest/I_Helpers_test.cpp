@@ -16,6 +16,18 @@ void readInt_Test()
 //==================================================
 
 //==================================================
+//============="readFloat() function Test"============
+void readFloat_Test()
+{
+    Ktest readFloat_Test("readFloat() function Test");
+    readFloat_Test.EXPECT_EQ(readFloat_Test.INSERT_INPUT("400.8",Input_helpers::readFloat),(double)400.8);
+    readFloat_Test.EXPECT_EQ(readFloat_Test.INSERT_INPUT("400.80",Input_helpers::readFloat),(double)400.8);
+    readFloat_Test.EXPECT_EQ(readFloat_Test.INSERT_INPUT("",Input_helpers::readFloat),(double)0);
+    readFloat_Test.DISPLAY_DATA();
+}
+//==================================================
+
+//==================================================
 //============="readStr() function Test"============
 void readStr_Test()
 {
@@ -29,13 +41,15 @@ void readStr_Test()
 //==================================================
 
 //==================================================
-//============"isIntInRange() function Test"===========
-void isIntInRange_Test()
+//============"isNumInRange() function Test"===========
+void isNumInRange_Test()
 {
-    Ktest isIntInRange_Test("isIntInRange() function Test");
-    isIntInRange_Test.EXPECT_TRUE(Input_helpers::isIntInRange(15,1,100));
-    isIntInRange_Test.EXPECT_FALSE(Input_helpers::isIntInRange(110,1,100));// 110 out of range(1:100)!
-    isIntInRange_Test.DISPLAY_DATA();
+    Ktest isNumInRange_Test("isNumInRange() function Test");
+    isNumInRange_Test.EXPECT_TRUE(Input_helpers::isNumInRange(15,1,100));
+    isNumInRange_Test.EXPECT_FALSE(Input_helpers::isNumInRange(110,1,100));// 110 out of range(1:100)!
+    isNumInRange_Test.EXPECT_TRUE(Input_helpers::isNumInRange(15.6,1.2,100.2));
+    isNumInRange_Test.EXPECT_FALSE(Input_helpers::isNumInRange(100.1,1.0,100.0));// 100.1 out of range(1.0:100.0)!
+    isNumInRange_Test.DISPLAY_DATA();
 }
 //==================================================
 
@@ -44,8 +58,9 @@ int main()
 {
 
     readInt_Test();
+    readFloat_Test();
     readStr_Test();
-    isIntInRange_Test();
+    isNumInRange_Test();
 
     return 0;
 }

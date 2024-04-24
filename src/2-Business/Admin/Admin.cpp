@@ -133,7 +133,7 @@ bool Admin::login(string username,string password)
 bool Admin::save()
 {
     string record=convertInfosToRecord(getInfos());
-    return Bank::saveRecord(record);
+    return Bank::saveAdminRecord(record);
 }
 
 bool Admin::asUpdateTo(string username)
@@ -152,7 +152,7 @@ bool Admin::asUpdateTo(string username)
         newAdminsInfos.push_back(convertInfosToRecord(admin));
     }
 
-    return Bank::updateData(newAdminsInfos);
+    return Bank::updateAdminData(newAdminsInfos);
 }
 
 bool Admin::deleteAdmin(string username)
@@ -173,7 +173,7 @@ bool Admin::deleteAdmin(string username)
     }
 
     newAdminsInfos.erase(newAdminsInfos.begin()+posToDelete);
-    return Bank::updateData(newAdminsInfos);
+    return Bank::updateAdminData(newAdminsInfos);
 }
 
 bool Admin::log(string username)

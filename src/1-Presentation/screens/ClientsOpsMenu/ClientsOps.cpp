@@ -1,6 +1,11 @@
 #include "ClientsOps.h"
 // all we need iostream ..etc in .h file above
 #include "../Dashboard/Dashboard.h"
+#include "../AddClient/AddClient.h"
+#include "../ClientsList/ClientsList.h"
+#include "../FindClient/FindClient.h"
+#include "../DeleteClient/DeleteClient.h"
+#include "../UpdateClient/UpdateClient.h"
 // read impelimintation.md document to get some notes
 
 using Screen::ClientsOps;
@@ -20,23 +25,23 @@ void ClientsOps::CallSuitableProcess(ClientsOpsChoices choice)
         Dashboard();
         break;
     case ClientsOpsChoices::goAddClient:
-        Ui_helpers::alert("Add Client screen will be here");
+        Screen::AddClient();
         ClientsOps(true);
         break;
     case ClientsOpsChoices::goUpdateClient:
-        Ui_helpers::alert("Update Client screen will be here");
+        Screen::UpdateClient();
         ClientsOps(true);
         break;
     case ClientsOpsChoices::goDeleteClient:
-        Ui_helpers::alert("Delete Client screen will be here");
+        Screen::DeleteClient();
         ClientsOps(true);
         break;
     case ClientsOpsChoices::goFindClient:
-        Ui_helpers::alert("Find Client screen will be here");
+        Screen::FindClient();
         ClientsOps(true);
         break;
     case ClientsOpsChoices::goListClients:
-        Ui_helpers::alert("List Clients screen will be here");
+        Screen::ClientsList();
         ClientsOps(true);
         break;
     default:

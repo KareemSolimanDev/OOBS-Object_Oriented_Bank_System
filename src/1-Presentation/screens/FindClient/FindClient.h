@@ -4,25 +4,26 @@
 #include <iomanip>
 #include "../BaseScreen.h"
 #include "../../../../include/Ui_Helpers/Ui_helpers.h"
-#include "../../../2-Business/Admin/Admin.h"
+#include "../../../2-Business/Client/Client.h"
 
 using std::string;
 using std::cout;
 
 namespace Screen
 {
-    class FindAdmin : protected BaseScreen
+    class FindClient : protected BaseScreen
     {
 
     private:
-        string _title="Find Admin Screen";
+        string _title="Find Client Screen";
+
 
         void displayContent();
         void show() override;
     public:
-        FindAdmin();
+        FindClient();
     };
 
 } // namespace Screen
-#include "FindAdmin.cpp"
+#include "FindClient.cpp"
 

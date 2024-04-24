@@ -17,7 +17,17 @@ long long Input_helpers::readInt()
     return input;
 }
 
-bool Input_helpers::isIntInRange(int num,int min,int max)
+double Input_helpers::readFloat()
+{
+    double input = 0;
+    std::cin >> input;
+    cin.ignore();
+    cin.clear();
+    return input;
+}
+
+template<typename T>
+bool Input_helpers::isNumInRange(T num,T min,T max)
 {
     return (num >= min && num <= max);
 }
