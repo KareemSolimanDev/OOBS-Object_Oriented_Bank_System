@@ -1,5 +1,6 @@
 #include "Dashboard.h"
 // all we need iostream ..etc in .h file above
+#include "../MainClientsList/MainClientsList.h"
 #include "../ClientsOpsMenu/ClientsOps.h"
 #include "../AdminsOpsMenu/AdminsOps.h"
 #include "../TransactionsMenu/Transactions.h"
@@ -21,7 +22,7 @@ void Dashboard::CallSuitableProcess(DashboardChoices choice)
     switch (choice)
     {
     case DashboardChoices::goShowClientsList:
-        Ui_helpers::alert(" Show Clients List screen will be here");
+        Screen::MainClientsList();
         Dashboard(true); // call Dashboard screen
         break;
     case DashboardChoices::goClientsOperations:
