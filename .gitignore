@@ -1,6 +1,5 @@
 .vscode/
 
 *.exe
-!main.exe
 
 command
