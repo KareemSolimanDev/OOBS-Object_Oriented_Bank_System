@@ -144,3 +144,13 @@ bool Client::deleteClient(string accountNum)
     return Bank::updateClientData(newClientsInfos);
 }
 
+
+void Client::withdraw(float amount)
+{
+    _balance -= amount;
+}
+
+void Client::deposite(float amount)
+{
+    _balance += amount;
+}

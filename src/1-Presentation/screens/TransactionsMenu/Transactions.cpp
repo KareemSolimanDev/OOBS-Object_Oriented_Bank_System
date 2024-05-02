@@ -1,6 +1,8 @@
 #include "Transactions.h"
 // all we need iostream ..etc in .h file above
 #include "../Dashboard/Dashboard.h"
+#include "../Deposite/Deposite.h"
+#include "../Withdraw/Withdraw.h"
 // read impelimintation.md document to get some notes
 
 using Screen::Transactions;
@@ -19,16 +21,12 @@ void Transactions::CallSuitableProcess(TransactionsChoices choice)
     case TransactionsChoices::goDashboard:
         Dashboard();
         break;
-    case TransactionsChoices::goTotalBalance:
-        Ui_helpers::alert("Total Balance screen will be here");
-        Transactions(true);
-        break;
     case TransactionsChoices::goWithdraw:
-        Ui_helpers::alert("Withdraw screen will be here");
+        Screen::Withdraw();
         Transactions(true);
         break;
     case TransactionsChoices::goDeposite:
-        Ui_helpers::alert("Deposite screen will be here");
+        Screen::Deposite();
         Transactions(true);
         break;
     default:

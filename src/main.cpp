@@ -6,7 +6,8 @@
 int main()
 {
 
-    Screen::Login();
+    // Screen::Login();
+    Screen::Dashboard();
 
     return 0;
 }

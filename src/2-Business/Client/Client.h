@@ -35,6 +35,8 @@ public:
     Client(ClientInfos infos);
     ClientInfos getInfos();
     bool save();
+    void withdraw(float amount);
+    void deposite(float amount);
     bool asUpdateTo(string accountNum);
     static bool deleteClient(string accountNum);
     static vector<ClientInfos> loadClientsInfo();

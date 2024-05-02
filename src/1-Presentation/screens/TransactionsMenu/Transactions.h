@@ -15,12 +15,11 @@ namespace Screen
     {
     private:
         string _title = "Transactions";
-        vector<string> _menuItems={"Dashboard", "total Balance", "withdraw", "deposite"};
+        vector<string> _menuItems={"Dashboard", "withdraw", "deposite"};
 
         enum TransactionsChoices
         {
             goDashboard= 1,
-            goTotalBalance,
             goWithdraw,
             goDeposite,
         };
