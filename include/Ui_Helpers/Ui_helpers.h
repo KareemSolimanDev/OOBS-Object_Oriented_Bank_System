@@ -3,6 +3,7 @@
 #include "../libs/I_Helpers/Input_helpers.h"
 #include "../libs/O_Helpers/output_helpers.h"
 #include <vector>
+#include <iomanip>
 
 using std::string;
 using std::vector;
@@ -11,6 +12,8 @@ using std::vector;
 
 class Ui_helpers
 {
+private:
+    static const short minTabelWidth= 80;
 public:
 
 
@@ -30,7 +33,8 @@ public:
     static void header(string title);
 
     static void menu(string menuTitle= "Menu", vector<string> menuItems={},short leftMargin=-1);
-    
+
+    static void tabel(string title,vector<string> header,vector<vector<string>> data,short tabelWidth=minTabelWidth);
     //======================================================================
     //====================        Fields            ========================
     //======================================================================

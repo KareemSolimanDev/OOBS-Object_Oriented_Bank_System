@@ -52,6 +52,30 @@ void Ui_helpers::menu(string menuTitle, vector<string> menuItems,short leftMargi
     std::cout << output_helpers::repeat('=', 60) << std::endl;
 }
 
+void Ui_helpers::tabel(string title,vector<string> header,vector<vector<string>> data,short tabelWidth)
+{
+    tabelWidth = tabelWidth < minTabelWidth ? minTabelWidth : tabelWidth;
+
+    cout << output_helpers::repeat(" ",((tabelWidth/2)-(title.length()/2))) << title << "\n";
+
+    cout << output_helpers::repeat("_",tabelWidth) << "\n";
+    for (string &cellName : header)
+    {
+        cout << "| " << std::left << std::setw(tabelWidth/header.size()) << cellName ;
+    }
+    cout << "\n";
+    cout << output_helpers::repeat("_",tabelWidth) << "\n";
+    for (vector<string> &line : data)
+    {
+        for (string &info : line)
+        {
+            cout << "| " << std::setw(tabelWidth/header.size()) << std::left << info;
+        }
+            cout << "\n";
+    }
+    cout << output_helpers::repeat("_",tabelWidth) << "\n";
+}
+
 //======================================================================
 //====================        Fields            ========================
 //======================================================================

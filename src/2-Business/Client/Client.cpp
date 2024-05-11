@@ -1,26 +1,6 @@
 #include "Client.h"
-#include "../../3-Data Access/Bank.h"
 
 
-ClientInfos Client::convertRecordToInfos(string ClientRecord)
-{
-    vector<string> record=DataManip_helpers::SplitWords(ClientRecord,",");
-    //     | name     | accountNum | email     | phone    | pinCode  | balance
-    return { record[0], record[1], record[2],  record[3], record[4],  stof(record[5])};
-    
-}
-string Client::convertInfosToRecord(ClientInfos ClientInfos)
-{
-    vector<string> SData={ClientInfos.name,ClientInfos.accountNum,ClientInfos.email,ClientInfos.phone,ClientInfos.pinCode,std::to_string(ClientInfos.balance)};
-    return DataManip_helpers::JoinWords(SData,",");
-}
-
-
-
-ClientInfos Client::getInfos()
-{
-    return {_name,_accountNum,_email,_phone,_pinCode,_balance};
-}
 Client::Client(ClientInfos infos)
 {
     _name=infos.name;
@@ -32,116 +12,34 @@ Client::Client(ClientInfos infos)
 }
 
 
-
-
-vector<ClientInfos> Client::formatClientsData(vector<string> ClientsData)
+ClientInfos Client::getInfos()
 {
-    vector<ClientInfos> FClients;
-    ClientInfos infos;
-    for (string ClientData : ClientsData )
-    {
-        infos=convertRecordToInfos(ClientData);
-        FClients.push_back(infos);
-    }
-    return FClients;
+    return {this->_name,this->_accountNum,this->_email,this->_phone,this->_pinCode,this->_balance};
 }
 
-
-
-vector<ClientInfos> Client::loadClientsInfo()
+ClientInfos Client::searchForClient(string accountNum)
 {
-    vector<string> ClientsData=Bank::loadClientsData();
-    vector<ClientInfos> ClientsInfos=formatClientsData(ClientsData);
-    return ClientsInfos;
-}
-
-
-ClientInfos Client::getClientInfo(string accountNum)
-{
-    vector<ClientInfos> ClientsInfos=loadClientsInfo();
-    for (ClientInfos ClientInfos : ClientsInfos )
-    {
-        if (ClientInfos.accountNum==accountNum)
-        {
-            return ClientInfos;
-        }
-    }
-    return {};
+    return Bank::getClientInfo(accountNum);
 }
 
 bool Client::isExist(string accountNum)
 {
-    vector<ClientInfos> ClientsInfos=loadClientsInfo();
-    for (ClientInfos ClientInfos : ClientsInfos )
-    {
-        if (ClientInfos.accountNum==accountNum)
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool Client::login(string accountNum,string pinCode)
-{
-
-    vector<ClientInfos> ClientsInfos=loadClientsInfo();
-
-    for (ClientInfos ClientInfos : ClientsInfos )
-    {
-        if (ClientInfos.accountNum==accountNum && ClientInfos.pinCode==pinCode)
-        {
-            __CurrentClient__=ClientInfos;
-            return true;
-        }
-    }
-    return false;
+    return searchForClient(accountNum).accountNum == accountNum;
 }
 
 bool Client::save()
 {
-    string record=convertInfosToRecord(getInfos());
-    return Bank::saveClientRecord(record);
+    return Bank::saveClient(this->getInfos());
 }
 
-bool Client::asUpdateTo(string accountNum)
+bool Client::update(ClientInfos newInfos)
 {
-    ClientInfos newInfos=getInfos();
-    vector<ClientInfos> ClientsInfos=loadClientsInfo();
-    vector<string> newClientsInfos;
-
-    
-    for (ClientInfos &Client : ClientsInfos)
-    {
-        if (Client.accountNum==accountNum)
-        {
-            Client=newInfos;
-        }
-        newClientsInfos.push_back(convertInfosToRecord(Client));
-    }
-
-    return Bank::updateClientData(newClientsInfos);
+    return Bank::updateClient(this->_accountNum,newInfos);
 }
 
-bool Client::deleteClient(string accountNum)
+bool Client::deleteIt()
 {
-    vector<ClientInfos> ClientsInfos=loadClientsInfo();
-    vector<string> newClientsInfos;
-    short posToDelete;
-    short counter=0;
-    
-    for (ClientInfos &Client : ClientsInfos)
-    {
-        counter++;
-        if (Client.accountNum==accountNum)
-        {
-            posToDelete=counter;
-        }
-        newClientsInfos.push_back(convertInfosToRecord(Client));
-    }
-
-    newClientsInfos.erase(newClientsInfos.begin()+posToDelete);
-    return Bank::updateClientData(newClientsInfos);
+    return Bank::deleteClient(this->_accountNum);
 }
 
 

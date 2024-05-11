@@ -2,48 +2,38 @@
 #include <string>
 #include <vector>
 #include "../Person.h"
-#include "../../../include/libs/Data_Manip/DataManip_helpers.h"
-#include "../../../include/libs/Utilities/Utilities.h"
+#include "../../3-Data Access/Bank/Bank.h"
 
 
 using std::string;
 using std::vector;
 
-struct ClientInfos
-{
-    string name;
-    string accountNum;
-    string email;
-    string phone;
-    string pinCode;
-    float balance;
-};
 
 ClientInfos __CurrentClient__;
+
 class Client : protected Person
 {
 private:
     string _accountNum;
     string _pinCode;
     float _balance;
-    static ClientInfos convertRecordToInfos(string ClientRecord);
-    static string convertInfosToRecord(ClientInfos ClientInfos);
-    static string convertInfosToLog(ClientInfos ClientInfos);
-    static vector<ClientInfos> formatClientsData(vector<string> Data);
+
 public:
+
+
+    static ClientInfos searchForClient(string username);
+    static bool isExist(string username);
+    static bool login(string username,string password);
 
     Client(ClientInfos infos);
     ClientInfos getInfos();
     bool save();
+    bool update(ClientInfos newInfos);
+    bool deleteIt();
+
+
     void withdraw(float amount);
     void deposite(float amount);
-    bool asUpdateTo(string accountNum);
-    static bool deleteClient(string accountNum);
-    static vector<ClientInfos> loadClientsInfo();
-    static ClientInfos getClientInfo(string accountNum);
-    static bool isExist(string accountNum);
-    static bool login(string accountNum,string pinCode);
-
 };
 
 #include "Client.cpp"
