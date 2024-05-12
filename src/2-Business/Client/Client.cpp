@@ -17,6 +17,19 @@ ClientInfos Client::getInfos()
     return {this->_name,this->_accountNum,this->_email,this->_phone,this->_pinCode,this->_balance};
 }
 
+
+vector<vector<string>> Client::getAllClientsData()
+{
+    return Bank::getAllClientsData();
+}
+
+float Client::getTotalBalancies()
+{
+    return Bank::getTotalBalancies();
+}
+
+
+
 ClientInfos Client::searchForClient(string accountNum)
 {
     return Bank::getClientInfo(accountNum);

@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "../../../include/libs/F_Helpers/File_helpers.h"
+#include "../../../include/libs/Data_Manip/DataManip_helpers.h"
 #include "paths.h"
 
 using std::string;
@@ -18,6 +19,11 @@ protected:
     static vector<string> loadClientsData();
     static vector<string> loadAdminsLogData();
     
+    static vector<vector<string>> loadDataAsStr(string fileName);
+    static vector<vector<string>> loadAdminsDataAsStr();
+    static vector<vector<string>> loadClientsDataAsStr();
+    static vector<vector<string>> loadAdminsLogDataAsStr();
+
     static bool saveAdminRecord(string record);
     static bool saveClientRecord(string record);
     static bool saveAdminLog(string log);

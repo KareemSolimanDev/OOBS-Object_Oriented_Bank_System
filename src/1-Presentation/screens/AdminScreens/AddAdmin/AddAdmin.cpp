@@ -1,7 +1,4 @@
 #include "AddAdmin.h"
-// all we need iostream ..etc in .h file above
-#include "../Dashboard/Dashboard.h"
-// read impelimintation.md document to get some notes
 
 using Screen::AddAdmin;
 

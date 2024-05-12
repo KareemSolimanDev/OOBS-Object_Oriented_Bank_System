@@ -18,6 +18,8 @@ private:
     short _permissions;
 public:
 
+    static vector<vector<string>> getAllAdminsData();
+    static vector<vector<string>> getAllAdminsLogData();
     static AdminInfos searchForAdmin(string username);
     static bool isExist(string username);
     static bool login(string username,string password);

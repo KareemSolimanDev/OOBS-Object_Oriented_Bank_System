@@ -1,7 +1,4 @@
 #include "UpdateClient.h"
-// all we need iostream ..etc in .h file above
-#include "../Dashboard/Dashboard.h"
-// read impelimintation.md document to get some notes
 
 using Screen::UpdateClient;
 
@@ -28,9 +25,9 @@ void UpdateClient::handelInput()
         ClientInfos newInfos=readClientInfos();
         newInfos.accountNum=wantedClientAccountNum;
 
-        Client Client(newInfos);
+        Client Client(Client::searchForClient(wantedClientAccountNum));
 
-        if (Client.asUpdateTo(wantedClientAccountNum))
+        if (Client.update(newInfos))
         {
             Ui_helpers::alert("Client Updated successfully :)");
         }else{

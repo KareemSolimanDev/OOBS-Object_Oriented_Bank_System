@@ -15,6 +15,17 @@ AdminInfos Admin::getInfos()
     return {this->_name,this->_username,this->_email,this->_phone,this->_password,this->_permissions};
 }
 
+vector<vector<string>> Admin::getAllAdminsData()
+{
+    return Bank::getAllAdminsData();
+}
+
+vector<vector<string>> Admin::getAllAdminsLogData()
+{
+    return Bank::getAllAdminsLogData();
+}
+
+
 AdminInfos Admin::searchForAdmin(string username)
 {
     return Bank::getAdminInfo(username);

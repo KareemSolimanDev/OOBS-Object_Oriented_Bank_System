@@ -1,7 +1,4 @@
 #include "Logout.h"
-// all we need iostream ..etc in .h file above
-#include "../Login/Login.h"
-// read impelimintation.md document to get some notes
 
 using Screen::Logout;
 

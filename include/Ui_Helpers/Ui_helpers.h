@@ -13,7 +13,7 @@ using std::vector;
 class Ui_helpers
 {
 private:
-    static const short minTabelWidth= 80;
+    static const short minTabelWidth= 90;
 public:
 
 

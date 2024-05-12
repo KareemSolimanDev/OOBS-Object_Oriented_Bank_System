@@ -1,12 +1,5 @@
 #include "Dashboard.h"
-// all we need iostream ..etc in .h file above
-#include "../MainClientsList/MainClientsList.h"
-#include "../ClientsOpsMenu/ClientsOps.h"
-#include "../AdminsOpsMenu/AdminsOps.h"
-#include "../TransactionsMenu/Transactions.h"
-#include "../LogsMenu/Logs.h"
-#include "../Logout/Logout.h"
-// read impelimintation.md document to get some notes
+
 
 using Screen::Dashboard;
 
@@ -44,7 +37,7 @@ void Dashboard::CallSuitableProcess(DashboardChoices choice)
         }else{
             Dashboard();
         }
-        break;
+    //     break;
     default:
         break;
     }

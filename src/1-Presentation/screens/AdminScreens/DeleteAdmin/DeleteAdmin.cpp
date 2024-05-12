@@ -1,7 +1,4 @@
 #include "DeleteAdmin.h"
-// all we need iostream ..etc in .h file above
-#include "../Dashboard/Dashboard.h"
-// read impelimintation.md document to get some notes
 
 using Screen::DeleteAdmin;
 
@@ -10,8 +7,8 @@ using Screen::DeleteAdmin;
 void DeleteAdmin::handelInput()
 {
     string wantedAdminUsername=Ui_helpers::textField("Enter Admin user name you want to delete : ");
-    
-    if (Admin::deleteAdmin(wantedAdminUsername))
+    Admin admn(Admin::searchForAdmin(wantedAdminUsername));
+    if (admn.deleteIt())
     {
         Ui_helpers::alert("Admin Deleted successfully :)");
     }else{

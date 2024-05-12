@@ -1,12 +1,4 @@
 #include "AdminsOps.h"
-// all we need iostream ..etc in .h file above
-#include "../Dashboard/Dashboard.h"
-#include "../AddAdmin/AddAdmin.h"
-#include "../AdminsList/AdminsList.h"
-#include "../FindAdmin/FindAdmin.h"
-#include "../UpdateAdmin/UpdateAdmin.h"
-#include "../DeleteAdmin/DeleteAdmin.h"
-// read impelimintation.md document to get some notes
 
 using Screen::AdminsOps;
 
@@ -22,7 +14,7 @@ void AdminsOps::CallSuitableProcess(AdminsOpsChoices choice)
     switch (choice)
     {
     case AdminsOpsChoices::goDashboard:
-        Dashboard();
+        Screen::Dashboard();
         break;
     case AdminsOpsChoices::goAddAdmin:
         AddAdmin();

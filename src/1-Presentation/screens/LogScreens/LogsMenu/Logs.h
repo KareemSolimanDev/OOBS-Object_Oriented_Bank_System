@@ -2,8 +2,10 @@
 
 #include <iostream>
 #include <vector>
-#include "../BaseScreen.h"
-#include "../../../../include/Ui_Helpers/Ui_helpers.h"
+#include "../../BaseScreen.h"
+#include "../../../../../include/Ui_Helpers/Ui_helpers.h"
+#include "../../Dashboard/Dashboard.h"
+#include "../AdminsLog/AdminsLog.h"
 
 using std::string;
 using std::vector;

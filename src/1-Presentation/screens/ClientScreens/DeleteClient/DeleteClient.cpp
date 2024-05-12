@@ -1,7 +1,4 @@
 #include "DeleteClient.h"
-// all we need iostream ..etc in .h file above
-#include "../Dashboard/Dashboard.h"
-// read impelimintation.md document to get some notes
 
 using Screen::DeleteClient;
 
@@ -10,8 +7,8 @@ using Screen::DeleteClient;
 void DeleteClient::handelInput()
 {
     string wantedClientUsername=Ui_helpers::textField("Enter Client accont Number you want to delete : ");
-    
-    if (Client::deleteClient(wantedClientUsername))
+    Client clnt(Client::searchForClient(wantedClientUsername));
+    if (clnt.deleteIt())
     {
         Ui_helpers::alert("Client Deleted successfully :)");
     }else{

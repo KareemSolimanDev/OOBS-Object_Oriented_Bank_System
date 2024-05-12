@@ -2,8 +2,14 @@
 
 #include <iostream>
 #include <vector>
-#include "../BaseScreen.h"
-#include "../../../../include/Ui_Helpers/Ui_helpers.h"
+#include "../../BaseScreen.h"
+#include "../../../../../include/Ui_Helpers/Ui_helpers.h"
+#include "../../Dashboard/Dashboard.h"
+#include "../AddClient/AddClient.h"
+#include "../ClientsList/ClientsList.h"
+#include "../FindClient/FindClient.h"
+#include "../DeleteClient/DeleteClient.h"
+#include "../UpdateClient/UpdateClient.h"
 
 using std::string;
 using std::vector;

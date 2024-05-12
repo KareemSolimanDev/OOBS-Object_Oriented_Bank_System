@@ -47,6 +47,32 @@ vector<string> CoreBank::loadAdminsLogData()
     return File_helpers::GetDataFromFile(Path::AdminsLog_F);
 }
 
+vector<vector<string>> CoreBank::loadDataAsStr(string fileName)
+{
+    vector<vector<string>> data;
+    vector<string> lines=File_helpers::GetDataFromFile(fileName);
+    for (string line : lines)
+    {
+        data.push_back(DataManip_helpers::SplitWords(line,","));
+    }
+    return data;
+}
+
+vector<vector<string>> CoreBank::loadAdminsDataAsStr()
+{
+    return loadDataAsStr(Path::Admins_F);
+}
+
+vector<vector<string>> CoreBank::loadClientsDataAsStr()
+{
+    return loadDataAsStr(Path::Clients_F);
+}
+
+vector<vector<string>> CoreBank::loadAdminsLogDataAsStr()
+{
+    return loadDataAsStr(Path::AdminsLog_F);
+}
+
 // ====================
 
 // add data functions

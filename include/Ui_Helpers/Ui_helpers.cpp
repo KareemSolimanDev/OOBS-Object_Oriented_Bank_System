@@ -61,7 +61,7 @@ void Ui_helpers::tabel(string title,vector<string> header,vector<vector<string>>
     cout << output_helpers::repeat("_",tabelWidth) << "\n";
     for (string &cellName : header)
     {
-        cout << "| " << std::left << std::setw(tabelWidth/header.size()) << cellName ;
+        cout << "| " << std::left << std::setw(tabelWidth/(header.size()+1)) << cellName ;
     }
     cout << "\n";
     cout << output_helpers::repeat("_",tabelWidth) << "\n";
@@ -69,7 +69,7 @@ void Ui_helpers::tabel(string title,vector<string> header,vector<vector<string>>
     {
         for (string &info : line)
         {
-            cout << "| " << std::setw(tabelWidth/header.size()) << std::left << info;
+            cout << "| " << std::setw(tabelWidth/(header.size()+1)) << std::left << info;
         }
             cout << "\n";
     }

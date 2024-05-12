@@ -1,7 +1,4 @@
 #include "Withdraw.h"
-// all we need iostream ..etc in .h file above
-#include "../Dashboard/Dashboard.h"
-// read impelimintation.md document to get some notes
 
 using Screen::Withdraw;
 
@@ -9,7 +6,8 @@ using Screen::Withdraw;
 void Withdraw::displayContent()
 {
     string accountNum=Ui_helpers::textField("Enter Client Account Number : ");
-    ClientInfos clientInfo=Client::getClientInfo(accountNum);
+    ClientInfos clientInfo=Client::searchForClient(accountNum);
+
     if (clientInfo.accountNum!="")
     {
         Ui_helpers::alert("Client Balance = " + std::to_string(clientInfo.balance));
@@ -23,7 +21,7 @@ void Withdraw::displayContent()
 
         Client client(clientInfo);
         client.withdraw(amount);
-        client.asUpdateTo(accountNum);
+        client.update(client.getInfos());
 
         Ui_helpers::alert("Withdraw process done.");
     }else

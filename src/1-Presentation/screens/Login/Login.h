@@ -3,6 +3,8 @@
 #include <iostream>
 #include "../BaseScreen.h"
 #include "../../../../include/Ui_Helpers/Ui_helpers.h"
+#include "../Dashboard/Dashboard.h"
+#include "../../../2-Business/Admin/Admin.h"
 
 using std::string;
 using std::cout;

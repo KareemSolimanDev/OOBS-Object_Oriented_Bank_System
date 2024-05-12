@@ -1,7 +1,4 @@
 #include "FindClient.h"
-// all we need iostream ..etc in .h file above
-#include "../Dashboard/Dashboard.h"
-// read impelimintation.md document to get some notes
 
 using Screen::FindClient;
 
@@ -9,7 +6,7 @@ using Screen::FindClient;
 void FindClient::displayContent()
 {
     string accountNum=Ui_helpers::textField("Enter Client Account Number : ");
-    ClientInfos Client=Client::getClientInfo(accountNum);
+    ClientInfos Client=Client::searchForClient(accountNum);
     if (Client.accountNum!="")
     {
         Ui_helpers::alert("Client Data");

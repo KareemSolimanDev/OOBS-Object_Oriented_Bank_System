@@ -7,11 +7,33 @@ vector<AdminInfos> Bank::loadAdminsInfo()
     return adminsInfos;
 }
 
+vector<vector<string>> Bank::getAllAdminsData()
+{
+    return loadAdminsDataAsStr();
+}
+
 vector<AdminLogInfos> Bank::loadAdminsLog()
 {
     vector<string> adminsData=loadAdminsLogData();
     vector<AdminLogInfos> adminsInfos=formatAdminsLogData(adminsData);
     return adminsInfos;
+}
+
+vector<vector<string>> Bank::getAllAdminsLogData()
+{
+    return loadAdminsLogDataAsStr();
+}
+
+
+float Bank::getTotalBalancies()
+{
+    float total=0;
+    vector<ClientInfos> clients=loadClientsInfo();
+    for(ClientInfos client : clients)
+    {
+        total+=client.balance;
+    }
+    return total;
 }
 
 
@@ -86,9 +108,14 @@ bool Bank::logAdmin(AdminInfos admin)
 
 vector<ClientInfos> Bank::loadClientsInfo()
 {
-    vector<string> adminsData=loadClientsData();
-    vector<ClientInfos> adminsInfos=formatClientsData(adminsData);
-    return adminsInfos;
+    vector<string> clientsData=loadClientsData();
+    vector<ClientInfos> clientsInfos=formatClientsData(clientsData);
+    return clientsInfos;
+}
+
+vector<vector<string>> Bank::getAllClientsData()
+{
+    return loadClientsDataAsStr();
 }
 
 

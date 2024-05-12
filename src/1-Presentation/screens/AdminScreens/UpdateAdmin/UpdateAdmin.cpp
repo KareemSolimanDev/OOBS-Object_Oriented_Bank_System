@@ -1,7 +1,4 @@
 #include "UpdateAdmin.h"
-// all we need iostream ..etc in .h file above
-#include "../Dashboard/Dashboard.h"
-// read impelimintation.md document to get some notes
 
 using Screen::UpdateAdmin;
 
@@ -58,11 +55,9 @@ void UpdateAdmin::handelInput()
         AdminInfos newInfos=readAdminInfos();
         newInfos.username=wantedAdminUsername;
 
-        Admin admin(newInfos);
+        Admin admin(Admin::searchForAdmin(wantedAdminUsername));
 
-
-
-        if (admin.asUpdateTo(wantedAdminUsername))
+        if (admin.update(newInfos))
         {
             Ui_helpers::alert("Admin Updated successfully :)");
         }else{

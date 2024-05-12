@@ -12,7 +12,11 @@ class Bank : protected CoreBank, protected DataHandeler
 {
 public:
     static vector<AdminInfos> loadAdminsInfo();
+    static vector<vector<string>> getAllAdminsData();
     static vector<AdminLogInfos> loadAdminsLog();
+    static vector<vector<string>> getAllAdminsLogData();
+    static float getTotalBalancies();
+    
     static AdminInfos getAdminInfo(string username);
     static bool saveAdmin(AdminInfos admin);
     static bool updateAdmin(string username, AdminInfos admin);
@@ -20,6 +24,7 @@ public:
     static bool logAdmin(AdminInfos admin);
     
     static vector<ClientInfos> loadClientsInfo();
+    static vector<vector<string>> getAllClientsData();
     static ClientInfos getClientInfo(string accountNum);
     static bool saveClient(ClientInfos client);
     static bool updateClient(string accountNum, ClientInfos client);

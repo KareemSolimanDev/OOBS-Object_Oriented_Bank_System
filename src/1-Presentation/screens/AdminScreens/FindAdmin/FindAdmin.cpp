@@ -1,14 +1,11 @@
 #include "FindAdmin.h"
-// all we need iostream ..etc in .h file above
-#include "../Dashboard/Dashboard.h"
-// read impelimintation.md document to get some notes
 
 using Screen::FindAdmin;
 
 void FindAdmin::displayContent()
 {
     string username=Ui_helpers::textField("Enter Admin username : ");
-    AdminInfos admin=Admin::getAdminInfo(username);
+    AdminInfos admin=Admin::searchForAdmin(username);
     if (admin.username!="")
     {
         Ui_helpers::alert("Admin Data");

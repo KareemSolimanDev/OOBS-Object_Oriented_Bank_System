@@ -2,8 +2,11 @@
 
 #include <iostream>
 #include <vector>
-#include "../BaseScreen.h"
-#include "../../../../include/Ui_Helpers/Ui_helpers.h"
+#include "../../BaseScreen.h"
+#include "../../../../../include/Ui_Helpers/Ui_helpers.h"
+#include "../../Dashboard/Dashboard.h"
+#include "../Deposite/Deposite.h"
+#include "../Withdraw/Withdraw.h"
 
 using std::string;
 using std::vector;

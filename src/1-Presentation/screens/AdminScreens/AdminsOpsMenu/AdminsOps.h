@@ -2,8 +2,14 @@
 
 #include <iostream>
 #include <vector>
-#include "../BaseScreen.h"
-#include "../../../../include/Ui_Helpers/Ui_helpers.h"
+#include "../../BaseScreen.h"
+#include "../../../../../include/Ui_Helpers/Ui_helpers.h"
+#include "../../Dashboard/Dashboard.h"
+#include "../AddAdmin/AddAdmin.h"
+#include "../AdminsList/AdminsList.h"
+#include "../FindAdmin/FindAdmin.h"
+#include "../UpdateAdmin/UpdateAdmin.h"
+#include "../DeleteAdmin/DeleteAdmin.h"
 
 using std::string;
 using std::vector;

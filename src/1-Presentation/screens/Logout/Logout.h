@@ -3,6 +3,7 @@
 #include <iostream>
 #include "../BaseScreen.h"
 #include "../../../../include/Ui_Helpers/Ui_helpers.h"
+#include "../Login/Login.h"
 
 using std::string;
 using std::cout;
@@ -14,7 +15,6 @@ namespace Screen
 
     private:
         string _title="Logout Screen";
-
         void handelInput();
         void show() override;
     public:

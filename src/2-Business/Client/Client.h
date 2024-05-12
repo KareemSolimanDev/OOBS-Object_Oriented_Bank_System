@@ -20,10 +20,10 @@ private:
 
 public:
 
-
+    static vector<vector<string>> getAllClientsData();
+    static float getTotalBalancies();
     static ClientInfos searchForClient(string username);
     static bool isExist(string username);
-    static bool login(string username,string password);
 
     Client(ClientInfos infos);
     ClientInfos getInfos();
