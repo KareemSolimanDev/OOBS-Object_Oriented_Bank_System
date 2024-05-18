@@ -8,9 +8,15 @@ void MainClientsList::displayContent()
     string tabelTitle="Clients List (" + std::to_string(Clients.size()) + ") Client(s).";
     vector<string> tabelheader={"Name","Acc Num","Email","Phone","Pin Code","Balance"};
 
-    Ui_helpers::tabel(tabelTitle,tabelheader,Clients);
+    if (!Clients.empty())
+    {
 
-    Ui_helpers::alert("Total Balances = " + std::to_string(Client::getTotalBalancies()));
+        Ui_helpers::tabel(tabelTitle,tabelheader,Clients);
+        Ui_helpers::alert("Total Balances = " + std::to_string(Client::getTotalBalancies()));
+    }else{
+        Ui_helpers::warning("No Clients to show !!");
+    }
+    
 }
 
 void MainClientsList::handelInput()

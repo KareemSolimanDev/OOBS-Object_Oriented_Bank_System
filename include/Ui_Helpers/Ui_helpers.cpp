@@ -80,13 +80,16 @@ void Ui_helpers::tabel(string title,vector<string> header,vector<vector<string>>
         }
             std::cout << "\n";
     }
-    std::cout << output_helpers::repeat("_",tabelWidth) << "\n";
+    std::cout << output_helpers::repeat("_",tabelWidth) << std::endl;
 }
 
 void Ui_helpers::card(string title,vector<string> keys,vector<string> names,short cardWidth)
 {
         short keysColumnWidth=cardWidth/4;
-        alert(title);
+
+        if (title!="")
+            {alert(title);}
+
         std::cout << output_helpers::repeat('=',cardWidth) <<"\n";
         for (short i=0; i < keys.size();i++)
         {                  // manage width of keys column in card

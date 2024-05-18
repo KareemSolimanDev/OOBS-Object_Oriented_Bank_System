@@ -10,6 +10,12 @@ void Withdraw::displayContent()
     if (clientInfo.accountNum!="")
     {
         Ui_helpers::alert("Client Balance = " + std::to_string(clientInfo.balance));
+        if (clientInfo.balance == 0)
+        {
+            Ui_helpers::warning("You have not money to withdraw!!");
+            return;
+        }
+        
         float amount=Ui_helpers::floatField("Enter Amount to withdraw : ");
 
         while (amount > clientInfo.balance)

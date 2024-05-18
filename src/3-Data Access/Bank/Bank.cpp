@@ -105,8 +105,6 @@ bool Bank::logAdmin(AdminInfos admin)
 vector<ClientInfos> Bank::loadClientsInfo()
 {
     vector<string> clientsData=loadClientsData();
-    std::cout << clientsData[0];
-
     vector<ClientInfos> clientsInfos=formatClientsData(clientsData);
     return clientsInfos;
 }

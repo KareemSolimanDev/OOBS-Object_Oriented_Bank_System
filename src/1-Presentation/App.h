@@ -7,16 +7,16 @@ namespace App
 {
     void run(bool testingCase=false)
     {
-        if (testingCase)
+        
+        while (Config::AppRuningStatus)
         {
-            DashboardScreen.render();
-
-        }else{
-            while (Config::AppRuningStatus)
+            if (testingCase)
             {
+                DashboardScreen.render();
+            }else{
                 LoginScreen.render();
-            }
 
+            }
         }
         
     }

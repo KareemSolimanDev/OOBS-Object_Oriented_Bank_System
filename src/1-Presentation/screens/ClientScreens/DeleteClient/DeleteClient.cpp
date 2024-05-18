@@ -8,7 +8,9 @@ void DeleteClient::handelInput()
 {
     string wantedClientUsername=Ui_helpers::textField("Enter Client accont Number you want to delete : ");
     Client clnt(Client::searchForClient(wantedClientUsername));
-    if (clnt.deleteIt())
+
+    // in && if first condition false it not check next condition
+    if (Ui_helpers::confirmField("Are you sure, you want to delete this client (Y/N): ") && clnt.deleteIt())
     {
         Ui_helpers::alert("Client Deleted successfully :)");
     }else{

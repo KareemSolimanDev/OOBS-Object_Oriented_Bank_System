@@ -12,7 +12,7 @@ class AdminsLog : public BaseScreen
 {
 
 private:
-    string _title="Admins List Screen";
+    string _title="Admins Log List Screen";
 
     void displayContent() override;
     void handelInput() override;

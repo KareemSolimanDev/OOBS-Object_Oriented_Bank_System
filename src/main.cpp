@@ -4,7 +4,7 @@
 
 int main()
 {
-    App::run(true);
-
+    // if you want to pass login screen for testing reasons add "true" as an argument
+    App::run();  
     return 0;
 }
