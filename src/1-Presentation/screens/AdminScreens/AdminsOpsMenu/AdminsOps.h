@@ -1,10 +1,9 @@
 #pragma once
 
-#include <iostream>
+#include <string>
 #include <vector>
 #include "../../BaseScreen.h"
 #include "../../../../../include/Ui_Helpers/Ui_helpers.h"
-#include "../../Dashboard/Dashboard.h"
 #include "../AddAdmin/AddAdmin.h"
 #include "../AdminsList/AdminsList.h"
 #include "../FindAdmin/FindAdmin.h"
@@ -13,34 +12,33 @@
 
 using std::string;
 using std::vector;
-using std::cout;
 
-namespace Screen
+
+
+class AdminsOps : public BaseScreen
 {
-    class AdminsOps : protected BaseScreen
+private:
+    string _title = "Admins Operations";
+    vector<string> _menuItems={"Dashboard", "add Admin", "update Admin", "delete Admin", "find Admin", "list Admins"};
+
+    enum AdminsOpsChoices
     {
-    private:
-        string _title = "Admins Operations";
-        vector<string> _menuItems={"Dashboard", "add Admin", "update Admin", "delete Admin", "find Admin", "list Admins"};
-
-        enum AdminsOpsChoices
-        {
-            goDashboard= 1,
-            goAddAdmin,
-            goUpdateAdmin,
-            goDeleteAdmin,
-            goFindAdmin,
-            goListAdmins,
-        };
-
-        void displayContent();
-        void handelInput();
-        void CallSuitableProcess(AdminsOpsChoices choice);
-        void show() override;
-
-    public:
-
-        AdminsOps(bool load=false);
+        goDashboard= 1,
+        goAddAdmin,
+        goUpdateAdmin,
+        goDeleteAdmin,
+        goFindAdmin,
+        goListAdmins,
     };
-} // namespace Screen
+
+
+    void displayContent() override;
+    void handelInput() override;
+    void CallSuitableProcess(AdminsOpsChoices choice);
+
+public:
+
+    AdminsOps(){BaseScreen::_title=_title;};
+}AdminsOpsScreen;
+
 #include "AdminsOps.cpp"

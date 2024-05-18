@@ -1,29 +1,25 @@
 #pragma once
 
-#include <iostream>
-#include <iomanip>
+#include <string>
 #include "../../BaseScreen.h"
 #include "../../../../../include/Ui_Helpers/Ui_helpers.h"
 #include "../../../../2-Business/Admin/Admin.h"
-#include "../../Dashboard/Dashboard.h"
 
 using std::string;
-using std::cout;
 
-namespace Screen
+
+
+class FindAdmin : public BaseScreen
 {
-    class FindAdmin : protected BaseScreen
-    {
 
-    private:
-        string _title="Find Admin Screen";
+private:
+    string _title="Find Admin Screen";
+    void displayContent() override;
+    void handelInput() override;
+public:
+    FindAdmin(){BaseScreen::_title=_title;};
+}FindAdminScreen;
 
-        void displayContent();
-        void show() override;
-    public:
-        FindAdmin();
-    };
 
-} // namespace Screen
 #include "FindAdmin.cpp"
 

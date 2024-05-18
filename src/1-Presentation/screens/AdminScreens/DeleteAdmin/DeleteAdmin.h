@@ -1,28 +1,25 @@
 #pragma once
 
-#include <iostream>
+#include <string>
 #include "../../BaseScreen.h"
 #include "../../../../../include/Ui_Helpers/Ui_helpers.h"
 #include "../../../../2-Business/Admin/Admin.h"
-#include "../../Dashboard/Dashboard.h"
 
 using std::string;
-using std::cout;
 
-namespace Screen
+
+class DeleteAdmin : public BaseScreen
 {
-    class DeleteAdmin : protected BaseScreen
-    {
 
-    private:
-        string _title="Delete Admin Screen";
-        
-        void handelInput();
-        void show() override;
-    public:
-        DeleteAdmin();
-    };
+private:
+    string _title="Delete Admin Screen";
+    
+    void displayContent() override;
+    void handelInput()override;
+public:
+    DeleteAdmin(){BaseScreen::_title=_title;};
+}DeleteAdminScreen;
 
-} // namespace Screen
+
 #include "DeleteAdmin.cpp"
 

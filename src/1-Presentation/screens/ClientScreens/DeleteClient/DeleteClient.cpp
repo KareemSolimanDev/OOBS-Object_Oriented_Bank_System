@@ -1,7 +1,7 @@
 #include "DeleteClient.h"
 
-using Screen::DeleteClient;
 
+void DeleteClient::displayContent(){return;}
 
 
 void DeleteClient::handelInput()
@@ -14,17 +14,5 @@ void DeleteClient::handelInput()
     }else{
         Ui_helpers::warning("Error : Client Dosen't been Deleted, Try Again :(");
     }
-}
-
-void DeleteClient::show() {
-
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    handelInput();
-}
-
-// constructor
-DeleteClient::DeleteClient()
-{
-    show();
+    Ui_helpers::pause("We will go back");
 }

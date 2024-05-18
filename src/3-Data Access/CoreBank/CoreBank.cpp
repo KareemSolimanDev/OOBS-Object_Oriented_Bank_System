@@ -39,7 +39,11 @@ vector<string> CoreBank::loadAdminsData()
 
 vector<string> CoreBank::loadClientsData()
 {
-    return File_helpers::GetDataFromFile(Path::Clients_F);
+        // std::cout << File_helpers::GetDataFromFile(Path::Clients_F)[0];
+    vector<string> data=File_helpers::GetDataFromFile(Path::Clients_F);
+
+    return data;
+    // return File_helpers::GetDataFromFile(Path::Clients_F);
 }
 
 vector<string> CoreBank::loadAdminsLogData()

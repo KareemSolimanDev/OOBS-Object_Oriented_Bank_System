@@ -1,6 +1,5 @@
 #include "AdminsOps.h"
 
-using Screen::AdminsOps;
 
 void AdminsOps::displayContent()
 {
@@ -14,27 +13,27 @@ void AdminsOps::CallSuitableProcess(AdminsOpsChoices choice)
     switch (choice)
     {
     case AdminsOpsChoices::goDashboard:
-        Screen::Dashboard();
+        return;
         break;
     case AdminsOpsChoices::goAddAdmin:
-        AddAdmin();
-        AdminsOps(true);
+        AddAdminScreen.render();
+        this->render();
         break;
     case AdminsOpsChoices::goUpdateAdmin:
-        UpdateAdmin();
-        AdminsOps(true);
+        UpdateAdminScreen.render();
+        this->render();
         break;
     case AdminsOpsChoices::goDeleteAdmin:
-        DeleteAdmin();
-        AdminsOps(true);
+        DeleteAdminScreen.render();
+        this->render();
         break;
     case AdminsOpsChoices::goFindAdmin:
-        FindAdmin();
-        AdminsOps(true);
+        FindAdminScreen.render();
+        this->render();
         break;
     case AdminsOpsChoices::goListAdmins:
-        AdminsList();
-        AdminsOps(true);
+        AdminsListScreen.render();
+        this->render();
         break;
     default:
         break;
@@ -47,23 +46,4 @@ void AdminsOps::handelInput()
 {
     AdminsOpsChoices choice = (AdminsOpsChoices)Ui_helpers::selectField(_menuItems.size());
     CallSuitableProcess(choice);
-}
-
-void AdminsOps::show()
-{
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    displayContent();
-    handelInput();
-}
-
-// constructor
-AdminsOps::AdminsOps(bool load)
-{
-    if (load)
-    {
-        cout << "We will go to the "+_title+" Screen,";
-        system("pause");
-    }
-    show();
 }

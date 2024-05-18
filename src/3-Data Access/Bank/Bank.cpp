@@ -1,4 +1,5 @@
 #include "Bank.h"
+#include <iostream>
 
 vector<AdminInfos> Bank::loadAdminsInfo()
 {
@@ -79,20 +80,15 @@ bool Bank::deleteAdmin(string username)
 {
     vector<AdminInfos> adminsInfos=Bank::loadAdminsInfo();
     vector<string> newAdminsInfos;
-    short posToDelete;
-    short counter=0;
     
     for (AdminInfos &admin : adminsInfos)
     {
-        counter++;
         if (admin.username==username)
         {
-            posToDelete=counter;
+            continue;
         }
         newAdminsInfos.push_back(convertAdminInfosToRecord(admin));
     }
-
-    newAdminsInfos.erase(newAdminsInfos.begin()+posToDelete);
     return Bank::updateAdminData(newAdminsInfos);
 }
 
@@ -109,6 +105,8 @@ bool Bank::logAdmin(AdminInfos admin)
 vector<ClientInfos> Bank::loadClientsInfo()
 {
     vector<string> clientsData=loadClientsData();
+    std::cout << clientsData[0];
+
     vector<ClientInfos> clientsInfos=formatClientsData(clientsData);
     return clientsInfos;
 }
@@ -159,20 +157,16 @@ bool Bank::deleteClient(string accountNum)
 {
     vector<ClientInfos> clientsInfos=Bank::loadClientsInfo();
     vector<string> newClientsInfos;
-    short posToDelete;
-    short counter=0;
     
-    for (ClientInfos &client : clientsInfos)
+    for (ClientInfos client : clientsInfos)
     {
-        counter++;
         if (client.accountNum==accountNum)
         {
-            posToDelete=counter;
+            continue;
         }
         newClientsInfos.push_back(convertClientInfosToRecord(client));
     }
 
-    newClientsInfos.erase(newClientsInfos.begin()+posToDelete);
     return Bank::updateClientData(newClientsInfos);
 }
 

@@ -14,6 +14,7 @@ class Ui_helpers
 {
 private:
     static const short minTabelWidth= 90;
+    static const short minCardWidth= 60;
 public:
 
 
@@ -38,6 +39,8 @@ public:
     static void menu(string menuTitle= "Menu", vector<string> menuItems={},short leftMargin=-1);
 
     static void tabel(string title,vector<string> header,vector<vector<string>> data,short tabelWidth=minTabelWidth);
+    
+    static void card(string title,vector<string> keys,vector<string> names,short cardWidth=minCardWidth);
     //======================================================================
     //====================        Fields            ========================
     //======================================================================

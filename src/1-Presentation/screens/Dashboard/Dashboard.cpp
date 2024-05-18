@@ -13,23 +13,19 @@ void Dashboard::CallSuitableProcess(DashboardChoices choice)
     switch (choice)
     {
     case DashboardChoices::goShowClientsList:
-        Ui_helpers::alert("mainlist");
         MainClientsListScreen.render();
         this->render();
         break;
     case DashboardChoices::goClientsOperations:
-        // ClientsOps();
-        Ui_helpers::alert("client");
+        ClientsOpsScreen.render();
         this->render();
         break;
     case DashboardChoices::goTransactions:
         TransactionsScreen.render();
-        Ui_helpers::alert("trans");
         this->render();
         break;
     case DashboardChoices::goAdminOperations:
-        // AdminsOps();
-        Ui_helpers::alert("admin");
+        AdminsOpsScreen.render();
         this->render();
         break;
     case DashboardChoices::goLogs:

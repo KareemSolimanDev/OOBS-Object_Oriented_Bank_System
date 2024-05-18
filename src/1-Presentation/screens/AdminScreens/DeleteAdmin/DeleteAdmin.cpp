@@ -1,8 +1,7 @@
 #include "DeleteAdmin.h"
 
-using Screen::DeleteAdmin;
 
-
+void DeleteAdmin::displayContent(){return;}
 
 void DeleteAdmin::handelInput()
 {
@@ -16,15 +15,3 @@ void DeleteAdmin::handelInput()
     }
 }
 
-void DeleteAdmin::show() {
-
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    handelInput();
-}
-
-// constructor
-DeleteAdmin::DeleteAdmin()
-{
-    show();
-}

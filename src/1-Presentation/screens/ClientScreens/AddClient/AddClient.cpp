@@ -1,6 +1,6 @@
 #include "AddClient.h"
 
-using Screen::AddClient;
+void AddClient::displayContent(){return;}
 
 string AddClient::readAccountNum()
 {
@@ -37,19 +37,6 @@ void AddClient::handelInput()
     }else{
         Ui_helpers::warning("Error : Client Dosen't been Added, Try Again :(");
     }
-    
-}
 
-void AddClient::show() {
-
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    Ui_helpers::alert("Add Client Data");
-    handelInput();
-}
-
-// constructor
-AddClient::AddClient()
-{
-    show();
+    Ui_helpers::pause("We will go back");
 }

@@ -1,31 +1,30 @@
 #pragma once
 
-#include <iostream>
+#include <string>
 #include "../../BaseScreen.h"
 #include "../../../../../include/Ui_Helpers/Ui_helpers.h"
 #include "../../../../2-Business/Client/Client.h"
 #include "../../Dashboard/Dashboard.h"
 
 using std::string;
-using std::cout;
 
-namespace Screen
+
+
+class AddClient : public BaseScreen
 {
-    class AddClient : protected BaseScreen
-    {
 
-    private:
-        string _title="Add Client Screen";
+private:
+    string _title="Add Client Screen";
 
-        string readAccountNum();
-        ClientInfos readClientInfos();
-        
-        void handelInput();
-        void show() override;
-    public:
-        AddClient();
-    };
+    string readAccountNum();
+    ClientInfos readClientInfos();
+    
+    void handelInput() override;
+    void displayContent() override;
+public:
+    AddClient(){BaseScreen::_title=_title;};
+}AddClientScreen;
 
-} // namespace Screen
+
 #include "AddClient.cpp"
 

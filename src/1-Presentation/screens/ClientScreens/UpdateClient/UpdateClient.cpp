@@ -1,8 +1,7 @@
 #include "UpdateClient.h"
 
-using Screen::UpdateClient;
 
-
+void UpdateClient::displayContent(){return;}
 
 
 ClientInfos UpdateClient::readClientInfos()
@@ -37,17 +36,5 @@ void UpdateClient::handelInput()
     {
         Ui_helpers::warning("Client user name Dosen't Exist, Try Again :(");
     }
-}
-
-void UpdateClient::show() {
-
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    handelInput();
-}
-
-// constructor
-UpdateClient::UpdateClient()
-{
-    show();
+    Ui_helpers::pause("We will go back");
 }

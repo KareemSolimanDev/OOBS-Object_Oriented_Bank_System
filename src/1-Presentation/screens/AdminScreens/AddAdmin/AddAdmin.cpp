@@ -1,6 +1,7 @@
 #include "AddAdmin.h"
 
-using Screen::AddAdmin;
+
+void AddAdmin::displayContent(){return;}
 
 string AddAdmin::readUserName()
 {
@@ -24,7 +25,7 @@ short AddAdmin::readPermissions()
     }
     else
     {
-        cout << "Do you want to give access to :\n";
+        std::cout << "Do you want to give access to :\n";
         PerNum |= (Ui_helpers::confirmField("Show Client list,(y/n)\n>>") ? AdminPermissions::ShowClientListP : 0);
 
         PerNum |= (Ui_helpers::confirmField("Clients operations,(y/n)\n>>") ? AdminPermissions::ClientsOpsP : 0);
@@ -67,19 +68,6 @@ void AddAdmin::handelInput()
     }else{
         Ui_helpers::warning("Error : Admin Dosen't been Added, Try Again :(");
     }
-    
-}
+    Ui_helpers::pause("We will go back");
 
-void AddAdmin::show() {
-
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    Ui_helpers::alert("Add Admin Data");
-    handelInput();
-}
-
-// constructor
-AddAdmin::AddAdmin()
-{
-    show();
 }

@@ -1,6 +1,5 @@
 #include "ClientsList.h"
 
-using Screen::ClientsList;
 
 
 
@@ -19,15 +18,8 @@ void ClientsList::displayContent()
 
 
 
-void ClientsList::show() {
+void ClientsList::handelInput() {
 
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    displayContent();
+        Ui_helpers::pause("We will go back");
 }
 
-// constructor
-ClientsList::ClientsList()
-{
-    show();
-}

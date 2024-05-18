@@ -1,8 +1,7 @@
 #include "UpdateAdmin.h"
 
-using Screen::UpdateAdmin;
 
-
+void UpdateAdmin::displayContent(){return;}
 
 short UpdateAdmin::readPermissions()
 {
@@ -14,7 +13,7 @@ short UpdateAdmin::readPermissions()
     }
     else
     {
-        cout << "Do you want to give access to :\n";
+        std::cout << "Do you want to give access to :\n";
         PerNum |= (Ui_helpers::confirmField("Show Client list,(y/n)\n>>") ? AdminPermissions::ShowClientListP : 0);
 
         PerNum |= (Ui_helpers::confirmField("Clients operations,(y/n)\n>>") ? AdminPermissions::ClientsOpsP : 0);
@@ -67,17 +66,5 @@ void UpdateAdmin::handelInput()
     {
         Ui_helpers::warning("Admin user name Dosen't Exist, Try Again :(");
     }
-}
-
-void UpdateAdmin::show() {
-
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    handelInput();
-}
-
-// constructor
-UpdateAdmin::UpdateAdmin()
-{
-    show();
+    Ui_helpers::pause("We will go back");
 }

@@ -16,7 +16,7 @@ private:
 
     void displayContent() override;
     void handelInput() override;
-    void show() ;
+
 public:
     Withdraw(){BaseScreen::_title=_title;};
 }WithdrawScreen;

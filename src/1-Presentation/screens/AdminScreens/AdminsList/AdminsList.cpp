@@ -1,6 +1,5 @@
 #include "AdminsList.h"
 
-using Screen::AdminsList;
 
 
 
@@ -15,15 +14,10 @@ void AdminsList::displayContent()
 
 
 
-void AdminsList::show() {
-
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    displayContent();
-}
-
-// constructor
-AdminsList::AdminsList()
+void AdminsList::handelInput()
 {
-    show();
+
+    Ui_helpers::pause("We will go back");
 }
+
+

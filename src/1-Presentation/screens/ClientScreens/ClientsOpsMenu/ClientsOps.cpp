@@ -1,6 +1,5 @@
 #include "ClientsOps.h"
 
-using Screen::ClientsOps;
 
 void ClientsOps::displayContent()
 {
@@ -14,27 +13,27 @@ void ClientsOps::CallSuitableProcess(ClientsOpsChoices choice)
     switch (choice)
     {
     case ClientsOpsChoices::goDashboard:
-        Screen::Dashboard();
+        return;
         break;
     case ClientsOpsChoices::goAddClient:
-        Screen::AddClient();
-        ClientsOps(true);
+        AddClientScreen.render();
+        this->render();
         break;
     case ClientsOpsChoices::goUpdateClient:
-        Screen::UpdateClient();
-        ClientsOps(true);
+        UpdateClientScreen.render();
+        this->render();
         break;
     case ClientsOpsChoices::goDeleteClient:
-        Screen::DeleteClient();
-        ClientsOps(true);
+        DeleteClientScreen.render();
+        this->render();
         break;
     case ClientsOpsChoices::goFindClient:
-        Screen::FindClient();
-        ClientsOps(true);
+        FindClientScreen.render();
+        this->render();
         break;
     case ClientsOpsChoices::goListClients:
-        Screen::ClientsList();
-        ClientsOps(true);
+        ClientsListScreen.render();
+        this->render();
         break;
     default:
         break;
@@ -47,23 +46,4 @@ void ClientsOps::handelInput()
 {
     ClientsOpsChoices choice = (ClientsOpsChoices)Ui_helpers::selectField(_menuItems.size());
     CallSuitableProcess(choice);
-}
-
-void ClientsOps::show()
-{
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    displayContent();
-    handelInput();
-}
-
-// constructor
-ClientsOps::ClientsOps(bool load)
-{
-    if (load)
-    {
-        cout << "We will go to the "+_title+" Screen,";
-        system("pause");
-    }
-    show();
 }

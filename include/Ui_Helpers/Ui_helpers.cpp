@@ -12,7 +12,7 @@ void Ui_helpers::clear()
 void Ui_helpers::pause(string msg)
 {
     if(msg!="")
-        cout << msg+", ";
+        std::cout << msg+", ";
     system("pause");
 }
 
@@ -63,25 +63,40 @@ void Ui_helpers::tabel(string title,vector<string> header,vector<vector<string>>
 {
     tabelWidth = tabelWidth < minTabelWidth ? minTabelWidth : tabelWidth;
 
-    cout << output_helpers::repeat(" ",((tabelWidth/2)-(title.length()/2))) << title << "\n";
+    std::cout << output_helpers::repeat(" ",((tabelWidth/2)-(title.length()/2))) << title << "\n";
 
-    cout << output_helpers::repeat("_",tabelWidth) << "\n";
+    std::cout << output_helpers::repeat("_",tabelWidth) << "\n";
     for (string &cellName : header)
     {
-        cout << "| " << std::left << std::setw(tabelWidth/(header.size()+1)) << cellName ;
+        std::cout << "| " << std::left << std::setw(tabelWidth/(header.size()+1)) << cellName ;
     }
-    cout << "\n";
-    cout << output_helpers::repeat("_",tabelWidth) << "\n";
+    std::cout << "\n";
+    std::cout << output_helpers::repeat("_",tabelWidth) << "\n";
     for (vector<string> &line : data)
     {
         for (string &info : line)
         {
-            cout << "| " << std::setw(tabelWidth/(header.size()+1)) << std::left << info;
+            std::cout << "| " << std::setw(tabelWidth/(header.size()+1)) << std::left << info;
         }
-            cout << "\n";
+            std::cout << "\n";
     }
-    cout << output_helpers::repeat("_",tabelWidth) << "\n";
+    std::cout << output_helpers::repeat("_",tabelWidth) << "\n";
 }
+
+void Ui_helpers::card(string title,vector<string> keys,vector<string> names,short cardWidth)
+{
+        short keysColumnWidth=cardWidth/4;
+        alert(title);
+        std::cout << output_helpers::repeat('=',cardWidth) <<"\n";
+        for (short i=0; i < keys.size();i++)
+        {                  // manage width of keys column in card
+            std::cout   << (keys[i]+output_helpers::repeat(' ',keysColumnWidth-keys[i].length()) + ": ") 
+                        << names[i] << "\n";
+            
+        }
+        std::cout << output_helpers::repeat('=',cardWidth) << std::endl;
+}
+
 
 //======================================================================
 //====================        Fields            ========================
