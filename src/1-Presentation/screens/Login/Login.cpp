@@ -1,8 +1,9 @@
 #include "Login.h"
 
-using Screen::Login;
 
-void Login::handelLoginData()
+void Login::displayContent(){return;}
+
+void Login::handelInput()
 {
     if (_loginError)
     {
@@ -13,23 +14,11 @@ void Login::handelLoginData()
 
     if (Admin::login(usrename,password))
     {
-        Screen::Dashboard();
+        _loginError=false;
+        DashboardScreen.render();
     }else{
-        Screen::Login(true);
+        _loginError=true;
+        this->render();
     }
     
-}
-
-void Login::show() {
-
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    handelLoginData();
-}
-
-// constructor
-Login::Login(bool error)
-{
-    _loginError=error;
-    show();
 }

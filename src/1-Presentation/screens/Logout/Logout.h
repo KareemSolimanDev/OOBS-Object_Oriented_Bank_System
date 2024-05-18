@@ -1,26 +1,23 @@
 #pragma once
 
-#include <iostream>
+#include <string>
 #include "../BaseScreen.h"
 #include "../../../../include/Ui_Helpers/Ui_helpers.h"
-#include "../Login/Login.h"
+#include "../../Config.h"
 
 using std::string;
-using std::cout;
 
-namespace Screen
+
+class Logout : public BaseScreen
 {
-    class Logout : protected BaseScreen
-    {
+private:
+    string _title="Logout Screen";
+    void handelInput() override;
+    void displayContent() override;
+public:
+    Logout(){BaseScreen::_title=_title;};
+}LogoutScreen;
 
-    private:
-        string _title="Logout Screen";
-        void handelInput();
-        void show() override;
-    public:
-        Logout();
-    };
 
-} // namespace Screen
 #include "Logout.cpp"
 

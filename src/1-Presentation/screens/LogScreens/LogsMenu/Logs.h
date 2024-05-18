@@ -1,38 +1,33 @@
 #pragma once
 
-#include <iostream>
+#include <string>
 #include <vector>
 #include "../../BaseScreen.h"
 #include "../../../../../include/Ui_Helpers/Ui_helpers.h"
-#include "../../Dashboard/Dashboard.h"
 #include "../AdminsLog/AdminsLog.h"
 
 using std::string;
 using std::vector;
-using std::cout;
 
-namespace Screen
+class Logs : public BaseScreen
 {
-    class Logs : protected BaseScreen
+private:
+    string _title = "Logs";
+    vector<string> _menuItems={"Dashboard", "Admins login log", "Transactions log"};
+
+    enum LogsChoices
     {
-    private:
-        string _title = "Logs";
-        vector<string> _menuItems={"Dashboard", "Admins login log", "Transactions log"};
-
-        enum LogsChoices
-        {
-            goDashboard= 1,
-            goAdminsLoginLog,
-            goTransactionsLog,
-        };
-
-        void displayContent();
-        void handelInput();
-        void CallSuitableProcess(LogsChoices choice);
-        void show() override;
-
-    public:
-        Logs(bool load=false);
+        goDashboard= 1,
+        goAdminsLoginLog,
+        goTransactionsLog,
     };
-} // namespace Screen
+
+    void displayContent() override;
+    void CallSuitableProcess(LogsChoices choice);
+    void handelInput() override;
+
+public:
+    Logs(){BaseScreen::_title=_title;};
+}LogsScreen;
+
 #include "Logs.cpp"

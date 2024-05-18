@@ -1,30 +1,25 @@
 #pragma once
 
-#include <iostream>
-#include <iomanip>
+#include <string>
 #include "../../BaseScreen.h"
 #include "../../../../../include/Ui_Helpers/Ui_helpers.h"
 #include "../../../../2-Business/Client/Client.h"
-#include "../../Dashboard/Dashboard.h"
 
 using std::string;
-using std::cout;
 
-namespace Screen
+class Withdraw : public BaseScreen
 {
-    class Withdraw : protected BaseScreen
-    {
 
-    private:
-        string _title="Withdarw Screen";
+private:
+    string _title="Withdarw Screen";
 
 
-        void displayContent();
-        void show() override;
-    public:
-        Withdraw();
-    };
+    void displayContent() override;
+    void handelInput() override;
+    void show() ;
+public:
+    Withdraw(){BaseScreen::_title=_title;};
+}WithdrawScreen;
 
-} // namespace Screen
 #include "Withdraw.cpp"
 

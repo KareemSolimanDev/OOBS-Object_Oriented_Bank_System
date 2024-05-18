@@ -5,26 +5,21 @@
 #include "../../BaseScreen.h"
 #include "../../../../../include/Ui_Helpers/Ui_helpers.h"
 #include "../../../../2-Business/Admin/Admin.h"
-#include "../../Dashboard/Dashboard.h"
 
 
 using std::string;
-using std::cout;
 
-namespace Screen
+class AdminsLog : public BaseScreen
 {
-    class AdminsLog : protected BaseScreen
-    {
 
-    private:
-        string _title="Admins List Screen";
+private:
+    string _title="Admins List Screen";
 
-        void displayContent();
-        void show() override;
-    public:
-        AdminsLog();
-    };
+    void displayContent() override;
+    void handelInput() override;
+public:
+    AdminsLog(){BaseScreen::_title=_title;};
+}AdminsLogScreen;
 
-} // namespace Screen
 #include "AdminsLog.cpp"
 

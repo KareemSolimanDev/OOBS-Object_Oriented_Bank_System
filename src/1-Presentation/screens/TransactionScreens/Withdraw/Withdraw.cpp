@@ -1,6 +1,5 @@
 #include "Withdraw.h"
 
-using Screen::Withdraw;
 
 
 void Withdraw::displayContent()
@@ -33,15 +32,8 @@ void Withdraw::displayContent()
 
 
 
-void Withdraw::show() {
+void Withdraw::handelInput() {
 
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    displayContent();
-}
+    Ui_helpers::pause("We will go back");
 
-// constructor
-Withdraw::Withdraw()
-{
-    show();
 }

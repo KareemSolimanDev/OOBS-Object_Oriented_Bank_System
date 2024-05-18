@@ -1,8 +1,5 @@
 #include "MainClientsList.h"
 
-using Screen::MainClientsList;
-
-
 
 void MainClientsList::displayContent()
 {
@@ -16,17 +13,8 @@ void MainClientsList::displayContent()
     Ui_helpers::alert("Total Balances = " + std::to_string(Client::getTotalBalancies()));
 }
 
-
-
-void MainClientsList::show() {
-
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    displayContent();
-}
-
-// constructor
-MainClientsList::MainClientsList()
+void MainClientsList::handelInput()
 {
-    show();
+    Ui_helpers::pause("We will go back");
 }
+

@@ -1,7 +1,5 @@
 #include "Deposite.h"
 
-using Screen::Deposite;
-
 
 void Deposite::displayContent()
 {
@@ -24,17 +22,7 @@ void Deposite::displayContent()
 
 }
 
-
-
-void Deposite::show() {
-
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    displayContent();
-}
-
-// constructor
-Deposite::Deposite()
+void Deposite::handelInput()
 {
-    show();
+    Ui_helpers::pause("We will go back");
 }

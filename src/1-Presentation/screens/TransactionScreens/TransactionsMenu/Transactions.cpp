@@ -1,6 +1,5 @@
 #include "Transactions.h"
 
-using Screen::Transactions;
 
 void Transactions::displayContent()
 {
@@ -10,19 +9,18 @@ void Transactions::displayContent()
 void Transactions::CallSuitableProcess(TransactionsChoices choice)
 {
 
-    Ui_helpers::clear();
     switch (choice)
     {
     case TransactionsChoices::goDashboard:
-        Screen::Dashboard();
+        return;
         break;
     case TransactionsChoices::goWithdraw:
-        Screen::Withdraw();
-        Transactions(true);
+        WithdrawScreen.render();
+        this->render();
         break;
     case TransactionsChoices::goDeposite:
-        Screen::Deposite();
-        Transactions(true);
+        DepositeScreen.render();
+        this->render();
         break;
     default:
         break;
@@ -35,23 +33,4 @@ void Transactions::handelInput()
 {
     TransactionsChoices choice = (TransactionsChoices)Ui_helpers::selectField(_menuItems.size());
     CallSuitableProcess(choice);
-}
-
-void Transactions::show()
-{
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    displayContent();
-    handelInput();
-}
-
-// constructor
-Transactions::Transactions(bool load)
-{
-    if (load)
-    {
-        cout << "We will go to the "+_title+" Screen,";
-        system("pause");
-    }
-    show();
 }

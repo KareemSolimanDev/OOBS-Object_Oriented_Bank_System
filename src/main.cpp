@@ -1,12 +1,10 @@
-#include <iostream>
-#include "1-Presentation/screens/Login/Login.h"
+#include "1-Presentation/App.h"
 
 
 
 int main()
 {
-
-    Screen::Login();
+    App::run(true);
 
     return 0;
 }

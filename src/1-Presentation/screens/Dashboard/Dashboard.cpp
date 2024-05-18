@@ -1,7 +1,6 @@
 #include "Dashboard.h"
 
 
-using Screen::Dashboard;
 
 void Dashboard::displayContent()
 {
@@ -11,31 +10,38 @@ void Dashboard::displayContent()
 void Dashboard::CallSuitableProcess(DashboardChoices choice)
 {
 
-    Ui_helpers::clear();
     switch (choice)
     {
     case DashboardChoices::goShowClientsList:
-        Screen::MainClientsList();
-        Dashboard(true); // call Dashboard screen
+        Ui_helpers::alert("mainlist");
+        MainClientsListScreen.render();
+        this->render();
         break;
     case DashboardChoices::goClientsOperations:
-        Screen::ClientsOps();
+        // ClientsOps();
+        Ui_helpers::alert("client");
+        this->render();
         break;
     case DashboardChoices::goTransactions:
-        Screen::Transactions();
+        TransactionsScreen.render();
+        Ui_helpers::alert("trans");
+        this->render();
         break;
     case DashboardChoices::goAdminOperations:
-        Screen::AdminsOps();
+        // AdminsOps();
+        Ui_helpers::alert("admin");
+        this->render();
         break;
     case DashboardChoices::goLogs:
-        Screen::Logs();
+        LogsScreen.render();
+        this->render();
         break;
     case DashboardChoices::goLogout:
         if(Ui_helpers::confirmField("Do you really want to logout (y/n): "))
         {
-            Screen::Logout();
+            LogoutScreen.render();
         }else{
-            Dashboard();
+            this->render();
         }
     //     break;
     default:
@@ -49,23 +55,4 @@ void Dashboard::handelInput()
 {
     DashboardChoices choice = (DashboardChoices)Ui_helpers::selectField(_menuItems.size());
     CallSuitableProcess(choice);
-}
-
-void Dashboard::show()
-{
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    displayContent();
-    handelInput();
-}
-
-// constructor
-Dashboard::Dashboard(bool load)
-{
-    if (load)
-    {
-        cout << "We will go to the "+_title+", ";
-        system("pause");
-    }
-    show();
 }

@@ -1,21 +1,32 @@
 #pragma once
-#include <iostream>
+#include <string>
 #include "../../../include/Ui_Helpers/Ui_helpers.h"
 
 
 using std::string;
-using std::cout;
+
+
 
 class BaseScreen
 {
-protected:
-
+private:
     void __outScreenHeader(string title)
     {
         Ui_helpers::header(title);
     }
+protected:
+    string _title;
+    virtual void displayContent() = 0;
+    virtual void handelInput() = 0;
 
-    virtual void show() = 0;
+public:
+    void render()
+    {
+        Ui_helpers::clear();
+        __outScreenHeader(this->_title);
+        displayContent();
+        handelInput();
+    }
 
 };
 

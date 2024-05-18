@@ -1,10 +1,5 @@
 #include "AdminsLog.h"
 
-using Screen::AdminsLog;
-
-
-
-
 void AdminsLog::displayContent()
 {
     vector<vector<string>> logs=Admin::getAllAdminsLogData();
@@ -13,18 +8,7 @@ void AdminsLog::displayContent()
 
     Ui_helpers::tabel(tabelTitle,tabelheader,logs);
 }
-
-
-
-void AdminsLog::show() {
-
-    Ui_helpers::clear();
-    __outScreenHeader(_title);
-    displayContent();
-}
-
-// constructor
-AdminsLog::AdminsLog()
+void AdminsLog::handelInput()
 {
-    show();
+    Ui_helpers::pause("We will go back");
 }
