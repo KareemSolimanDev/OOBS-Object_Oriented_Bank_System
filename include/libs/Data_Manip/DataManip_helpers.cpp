@@ -40,3 +40,29 @@ string DataManip_helpers::JoinWords(vector<string> words, string delim)
 
     return sentence;
 }
+
+
+string DataManip_helpers::Ltrim(string sentence)
+{
+    while(sentence[0]==' ')
+    {
+        sentence.erase(0,1);
+    }
+    return sentence;
+}
+
+string DataManip_helpers::Rtrim(string sentence)
+{
+    int lastIndex=sentence.length()-1;
+    while(sentence[lastIndex]==' ')
+    {
+        sentence.erase(lastIndex,lastIndex+1);
+        lastIndex=sentence.length()-1;
+    }
+    return sentence;
+}
+
+string DataManip_helpers::Trim(string sentence)
+{
+    return Rtrim(Ltrim(sentence));
+}

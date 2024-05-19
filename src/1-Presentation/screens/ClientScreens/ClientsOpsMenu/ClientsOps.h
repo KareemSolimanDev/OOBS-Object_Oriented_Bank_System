@@ -20,7 +20,7 @@ class ClientsOps : public BaseScreen
 {
 private:
     string _title = "Clients Operations";
-    vector<string> _menuItems={"Dashboard", "add Client", "update Client", "delete Client", "find Client", "list Clients"};
+    vector<string> _menuItems={"Dashboard", "Add Client", "Update Client", "Delete Client", "Find Client", "List Clients"};
 
     enum ClientsOpsChoices
     {

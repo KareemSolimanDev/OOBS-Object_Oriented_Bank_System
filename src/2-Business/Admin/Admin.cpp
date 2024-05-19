@@ -38,6 +38,9 @@ bool Admin::isExist(string username)
 
 bool Admin::login(string username,string password)
 {
+    username=DataManip_helpers::Trim(username);
+    password=DataManip_helpers::Trim(password);
+
     AdminInfos adminInfos=searchForAdmin(username);
     if (adminInfos.username==username && adminInfos.password==password)
     {

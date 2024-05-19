@@ -19,7 +19,7 @@ class AdminsOps : public BaseScreen
 {
 private:
     string _title = "Admins Operations";
-    vector<string> _menuItems={"Dashboard", "add Admin", "update Admin", "delete Admin", "find Admin", "list Admins"};
+    vector<string> _menuItems={"Dashboard", "Add Admin", "Update Admin", "Delete Admin", "Find Admin", "List Admins"};
 
     enum AdminsOpsChoices
     {

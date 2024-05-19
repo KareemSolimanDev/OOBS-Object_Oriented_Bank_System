@@ -22,3 +22,7 @@
 
 #### ATM App screens flowchart
 <img src="./flowcharts/ATMApp_ScreensFlowchart.drawio.svg" alt="=> ATM app screen flowchart"/>
+
+#### Data acces layer architicture
+<img src="./svgs/Data_Acces_Layer_archeticture.drawio.svg" alt="=> Bank app screen flowchart"/>
+<hr>
