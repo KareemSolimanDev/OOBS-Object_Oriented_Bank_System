@@ -10,8 +10,16 @@ void Dashboard::displayContent()
 
 bool Dashboard::hasPermission(DashboardChoices choicedScreen)
 {
+
+    // let's assume we choice (show clients list),
+    // to compare choice(has a number) to AdminPermissions(has a number),
+    // example : (goTransactions represents by 3, but in AdminPermission represents by 4),
+    // so equition is pow(2,choice-1)),
+    // with some casting to fit types.
     Global::AdminPermissions permission=Global::AdminPermissions(std::pow(2,float(choicedScreen)-1));
-    
+
+    // check if admin has all permissions or this screen permission or he try to logout,
+    // and return result in hasP variable.
     bool hasP=((__CurrentAdmin__.permissions == Global::AdminPermissions::AllP) 
                 || ((__CurrentAdmin__.permissions & permission) ==permission)
                 || (choicedScreen == DashboardChoices::goLogout));
