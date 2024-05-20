@@ -22,15 +22,23 @@ void Ui_helpers::pause(string msg)
 
 void Ui_helpers::alert(string msg,char lineSign, short Xpadding, short Ypadding)
 {
-    short width = (msg.length()) + (Xpadding * 2);
-    std::cout << output_helpers::repeat(lineSign, width) << output_helpers::repeat('\n', Ypadding);
-    std::cout << output_helpers::repeat(' ', Xpadding) << msg << output_helpers::repeat('\n', Ypadding);
-    std::cout << output_helpers::repeat(lineSign, width) << std::endl;
+    if(msg!="")
+    {
+        short width = (msg.length()) + (Xpadding * 2);
+        std::cout << output_helpers::repeat(lineSign, width) << output_helpers::repeat('\n', Ypadding);
+        std::cout << output_helpers::repeat(' ', Xpadding) << msg << output_helpers::repeat('\n', Ypadding);
+        std::cout << output_helpers::repeat(lineSign, width) << std::endl;
+    }
 }
 
 void Ui_helpers::warning(string title)
 {
     alert(title,'!',20);
+}
+
+void Ui_helpers::error(string title)
+{
+    alert(title,'X',20);
 }
 
 void Ui_helpers::header(string title)

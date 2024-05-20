@@ -1,8 +1,9 @@
 #pragma once
 
-#include <iostream>
 #include <vector>
+#include <math.h>
 #include "../BaseScreen.h"
+#include "../../Global.h"
 #include "../../../../include/Ui_Helpers/Ui_helpers.h"
 #include "../MainClientsList/MainClientsList.h"
 #include "../ClientScreens/ClientsOpsMenu/ClientsOps.h"
@@ -10,6 +11,7 @@
 #include "../TransactionScreens/TransactionsMenu/Transactions.h"
 #include "../LogScreens/LogsMenu/Logs.h"
 #include "../Logout/Logout.h"
+#include "../ErrorScreen/ErrorScreen.h"
 
 using std::string;
 using std::vector;
@@ -30,7 +32,7 @@ class Dashboard : public BaseScreen
             goLogs,
             goLogout,
         };
-
+        bool hasPermission(DashboardChoices choicedScreen);
         void CallSuitableProcess(DashboardChoices choice);
         void displayContent() override;
         void handelInput() override;

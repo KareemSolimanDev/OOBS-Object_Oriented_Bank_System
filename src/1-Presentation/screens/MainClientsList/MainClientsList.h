@@ -1,10 +1,8 @@
 #pragma once
 
-#include <iostream>
 #include "../BaseScreen.h"
 #include "../../../../include/Ui_Helpers/Ui_helpers.h"
 #include "../../../2-Business/Client/Client.h"
-#include "../Dashboard/Dashboard.h"
 
 using std::string;
 

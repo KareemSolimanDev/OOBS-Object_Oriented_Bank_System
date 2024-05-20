@@ -34,6 +34,8 @@ public:
     
     static void warning(string title);
 
+    static void error(string title);
+
     static void header(string title);
 
     static void menu(string menuTitle= "Menu", vector<string> menuItems={},short leftMargin=-1);

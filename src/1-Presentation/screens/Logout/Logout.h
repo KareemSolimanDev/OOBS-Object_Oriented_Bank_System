@@ -3,7 +3,7 @@
 #include <string>
 #include "../BaseScreen.h"
 #include "../../../../include/Ui_Helpers/Ui_helpers.h"
-#include "../../Config.h"
+#include "../../Global.h"
 
 using std::string;
 

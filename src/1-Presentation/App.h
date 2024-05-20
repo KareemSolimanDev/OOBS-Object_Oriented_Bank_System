@@ -1,14 +1,14 @@
 #pragma once
 #include "screens/Login/Login.h"
 #include "screens/Dashboard/Dashboard.h"
-#include "Config.h"
+#include "Global.h"
 
 namespace App
 {
     void run(bool testingCase=false)
     {
         
-        while (Config::AppRuningStatus)
+        while (Global::AppRuningStatus)
         {
             if (testingCase)
             {

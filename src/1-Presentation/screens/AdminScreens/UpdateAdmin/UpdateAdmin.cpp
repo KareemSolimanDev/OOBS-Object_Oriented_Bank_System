@@ -9,20 +9,20 @@ short UpdateAdmin::readPermissions()
     
     if (Ui_helpers::confirmField("Do you want to give full access,(y/n)\n>>"))
     {
-        PerNum = AdminPermissions::AllP;
+        PerNum = Global::AdminPermissions::AllP;
     }
     else
     {
         std::cout << "Do you want to give access to :\n";
-        PerNum |= (Ui_helpers::confirmField("Show Client list,(y/n)\n>>") ? AdminPermissions::ShowClientListP : 0);
+        PerNum |= (Ui_helpers::confirmField("Show Client list,(y/n)\n>>") ? Global::AdminPermissions::ShowClientListP : 0);
 
-        PerNum |= (Ui_helpers::confirmField("Clients operations,(y/n)\n>>") ? AdminPermissions::ClientsOpsP : 0);
+        PerNum |= (Ui_helpers::confirmField("Clients operations,(y/n)\n>>") ? Global::AdminPermissions::ClientsOpsP : 0);
 
-        PerNum |= (Ui_helpers::confirmField("TransActions,(y/n)\n>>") ? AdminPermissions::TransactionsP : 0);
+        PerNum |= (Ui_helpers::confirmField("TransActions,(y/n)\n>>") ? Global::AdminPermissions::TransactionsP : 0);
 
-        PerNum |= (Ui_helpers::confirmField("Admins operations,(y/n)\n>>") ? AdminPermissions::AdminsOpsP : 0);
+        PerNum |= (Ui_helpers::confirmField("Admins operations,(y/n)\n>>") ? Global::AdminPermissions::AdminsOpsP : 0);
 
-        PerNum |= (Ui_helpers::confirmField("Show Logs,(y/n)\n>>") ? AdminPermissions::LogsP : 0);
+        PerNum |= (Ui_helpers::confirmField("Show Logs,(y/n)\n>>") ? Global::AdminPermissions::LogsP : 0);
 
     }
     if (PerNum==0)

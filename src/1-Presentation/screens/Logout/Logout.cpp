@@ -6,7 +6,7 @@ void Logout::displayContent(){return;};
 void Logout::handelInput()
 {
     bool wantToLogin=Ui_helpers::confirmField("Do you want to login again (Y/N) : ");
-    Config::AppRuningStatus=wantToLogin;
+    Global::AppRuningStatus=wantToLogin;
 
     if (!wantToLogin)
     {
