@@ -4,6 +4,7 @@
 
 void Dashboard::displayContent()
 {
+    Ui_helpers::alert(("\n\t\tHi Admin, "+ __CurrentAdmin__.name),'_');
     Ui_helpers::menu((_title+" Options"),_menuItems);
 }
 
