@@ -22,6 +22,10 @@ void Transactions::CallSuitableProcess(TransactionsChoices choice)
         DepositeScreen.render();
         this->render();
         break;
+    case TransactionsChoices::goTransfer:
+        TransferScreen.render();
+        this->render();
+        break;
     default:
         break;
     }

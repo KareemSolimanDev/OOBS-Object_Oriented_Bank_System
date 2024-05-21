@@ -54,14 +54,3 @@ bool Client::deleteIt()
 {
     return Bank::deleteClient(this->_accountNum);
 }
-
-
-void Client::withdraw(float amount)
-{
-    _balance -= amount;
-}
-
-void Client::deposite(float amount)
-{
-    _balance += amount;
-}

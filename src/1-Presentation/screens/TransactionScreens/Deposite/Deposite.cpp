@@ -11,7 +11,7 @@ void Deposite::displayContent()
         float amount=Ui_helpers::floatField("Enter Amount you want to deposite : ");
         
         Client client(clientInfo);
-        client.deposite(amount);
+        client.Transactions.deposite(amount);
         client.update(client.getInfos());
 
         Ui_helpers::alert("Deposite process done.");

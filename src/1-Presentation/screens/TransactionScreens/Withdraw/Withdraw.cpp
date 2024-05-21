@@ -25,7 +25,7 @@ void Withdraw::displayContent()
         };
 
         Client client(clientInfo);
-        client.withdraw(amount);
+        client.Transactions.withdraw(amount);
         client.update(client.getInfos());
 
         Ui_helpers::alert("Withdraw process done.");

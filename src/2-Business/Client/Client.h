@@ -3,6 +3,7 @@
 #include <vector>
 #include "../Person.h"
 #include "../../3-Data Access/Bank/Bank.h"
+#include "../Transaction/Transaction.h"
 
 
 using std::string;
@@ -19,7 +20,6 @@ private:
     float _balance;
 
 public:
-
     static vector<vector<string>> getAllClientsData();
     static float getTotalBalancies();
     static ClientInfos searchForClient(string username);
@@ -32,8 +32,7 @@ public:
     bool deleteIt();
 
 
-    void withdraw(float amount);
-    void deposite(float amount);
+    Transaction Transactions= Transaction(_balance);
 };
 
 #include "Client.cpp"
