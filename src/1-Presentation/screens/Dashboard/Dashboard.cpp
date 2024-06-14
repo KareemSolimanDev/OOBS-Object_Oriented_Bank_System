@@ -47,6 +47,9 @@ void Dashboard::CallSuitableProcess(DashboardChoices choice)
         case DashboardChoices::goAdminOperations:
             AdminsOpsScreen.render();
             break;
+        case DashboardChoices::goCurrencyOperations:
+            CurrenciesOpsScreen.render();
+            break;
         case DashboardChoices::goLogs:
             LogsScreen.render();
             break;

@@ -12,6 +12,7 @@
 #include "../LogScreens/LogsMenu/Logs.h"
 #include "../Logout/Logout.h"
 #include "../ErrorScreen/ErrorScreen.h"
+#include "../CurrencyScreens/CurrenciesOpsMenu/CurrenciesOps.h"
 
 using std::string;
 using std::vector;
@@ -21,7 +22,7 @@ class Dashboard : public BaseScreen
 {
     private:
         string _title = "Dashboard";
-        vector<string> _menuItems = {"Show Clients List", "Client Operations", "Transactions", "Admin Operations", "logs", "Logout"};
+        vector<string> _menuItems = {"Show Clients List", "Client Operations", "Transactions", "Admin Operations", "Currency Operations", "logs", "Logout"};
 
         enum DashboardChoices
         {
@@ -29,6 +30,7 @@ class Dashboard : public BaseScreen
             goClientsOperations,
             goTransactions,
             goAdminOperations,
+            goCurrencyOperations,
             goLogs,
             goLogout,
         };

@@ -51,13 +51,18 @@ vector<string> CoreBank::loadAdminsLogData()
     return File_helpers::GetDataFromFile(Path::AdminsLog_F);
 }
 
-vector<vector<string>> CoreBank::loadDataAsStr(string fileName)
+vector<string> CoreBank::loadCurrenciesData()
+{
+    return File_helpers::GetDataFromFile(Path::Currencies_F);
+}
+
+vector<vector<string>> CoreBank::loadDataAsStr(string fileName,string recordsSeprator)
 {
     vector<vector<string>> data;
     vector<string> lines=File_helpers::GetDataFromFile(fileName);
     for (string line : lines)
     {
-        data.push_back(DataManip_helpers::SplitWords(line,","));
+        data.push_back(DataManip_helpers::SplitWords(line,recordsSeprator));
     }
     return data;
 }
@@ -75,6 +80,11 @@ vector<vector<string>> CoreBank::loadClientsDataAsStr()
 vector<vector<string>> CoreBank::loadAdminsLogDataAsStr()
 {
     return loadDataAsStr(Path::AdminsLog_F);
+}
+
+vector<vector<string>> CoreBank::loadCurrenciesDataAsStr()
+{
+    return loadDataAsStr(Path::Currencies_F,"|##|");
 }
 
 // ====================

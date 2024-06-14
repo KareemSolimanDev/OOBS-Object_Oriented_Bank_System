@@ -80,3 +80,23 @@ vector<ClientInfos> DataHandeler::formatClientsData(vector<string> ClientsData)
     }
     return FClients;
 }
+
+
+CurrencyInfos DataHandeler::convertCurrencyRecordToInfos(string currencyRecord)
+{
+    vector<string> record=DataManip_helpers::SplitWords(currencyRecord,"|##|");
+    //     | Country  | symbol | name        | rate 
+    return { record[0], record[1], record[2], stof(record[5])};
+}
+
+vector<CurrencyInfos> DataHandeler::formatCurrenciesData(vector<string> CurrenciesData)
+{
+    vector<CurrencyInfos> FCurrencies;
+    CurrencyInfos infos;
+    for (string CurrencyData : CurrenciesData )
+    {
+        infos=convertCurrencyRecordToInfos(CurrencyData);
+        FCurrencies.push_back(infos);
+    }
+    return FCurrencies;
+}

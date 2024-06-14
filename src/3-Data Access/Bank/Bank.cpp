@@ -38,6 +38,18 @@ float Bank::getTotalBalancies()
 }
 
 
+vector<CurrencyInfos> Bank::loadCurrenciesInfo()
+{
+    vector<string> CurrenciesData=loadCurrenciesData();
+    vector<CurrencyInfos> CurrenciesInfos=formatCurrenciesData(CurrenciesData);
+    return CurrenciesInfos;
+}
+
+vector<vector<string>> Bank::getAllCurrenciesData()
+{
+    return loadCurrenciesDataAsStr();
+}
+
 AdminInfos Bank::getAdminInfo(string username)
 {
     vector<AdminInfos> adminsInfos=Bank::loadAdminsInfo();

@@ -22,6 +22,8 @@ short UpdateAdmin::readPermissions()
 
         PerNum |= (Ui_helpers::confirmField("Admins operations,(y/n)\n>>") ? Global::AdminPermissions::AdminsOpsP : 0);
 
+        PerNum |= (Ui_helpers::confirmField("Currencies operations,(y/n)\n>>") ? Global::AdminPermissions::CurrenciesOpsP : 0);
+
         PerNum |= (Ui_helpers::confirmField("Show Logs,(y/n)\n>>") ? Global::AdminPermissions::LogsP : 0);
 
     }

@@ -12,7 +12,8 @@ namespace Global
         ClientsOpsP = 2,
         TransactionsP = 4,
         AdminsOpsP = 8,
-        LogsP = 16,
+        CurrenciesOpsP = 16,
+        LogsP = 32,
     };
     
 } // namespace Global

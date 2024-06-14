@@ -16,6 +16,8 @@ public:
     static vector<AdminLogInfos> loadAdminsLog();
     static vector<vector<string>> getAllAdminsLogData();
     static float getTotalBalancies();
+    static vector<CurrencyInfos> loadCurrenciesInfo();
+    static vector<vector<string>> getAllCurrenciesData();
     
     static AdminInfos getAdminInfo(string username);
     static bool saveAdmin(AdminInfos admin);

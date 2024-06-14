@@ -38,6 +38,14 @@ struct ClientInfos
     float balance;
 };
 
+struct CurrencyInfos
+{
+    string countryName;
+    string symbol;
+    string CurrencyName;
+    float rate;
+};
+
 class DataHandeler
 {
 protected:
@@ -56,6 +64,11 @@ protected:
     // ========================
 
     static vector<ClientInfos> formatClientsData(vector<string> Data);
+    
+    //===========================
+
+    static CurrencyInfos convertCurrencyRecordToInfos(string CurrencyRecord);
+    static vector<CurrencyInfos> formatCurrenciesData(vector<string> CurrenciesData);
 };
 
 #include "DataHandeler.cpp"

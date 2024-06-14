@@ -18,11 +18,13 @@ protected:
     static vector<string> loadAdminsData();
     static vector<string> loadClientsData();
     static vector<string> loadAdminsLogData();
+    static vector<string> loadCurrenciesData();
     
-    static vector<vector<string>> loadDataAsStr(string fileName);
+    static vector<vector<string>> loadDataAsStr(string fileName,string recordsSeprator=",");
     static vector<vector<string>> loadAdminsDataAsStr();
     static vector<vector<string>> loadClientsDataAsStr();
     static vector<vector<string>> loadAdminsLogDataAsStr();
+    static vector<vector<string>> loadCurrenciesDataAsStr();
 
     static bool saveAdminRecord(string record);
     static bool saveClientRecord(string record);
