@@ -8,7 +8,7 @@
 | ------------     | --------- |
 | Developer    :   | Kareem    |
 | Prog lang    :   | C++       |
-| Version      :   | v2.0.0    |
+| Version      :   | v3.0.0    |
 | Starting Date:   | 9th-4-2024|
 
 </details>
