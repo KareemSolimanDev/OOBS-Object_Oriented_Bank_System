@@ -21,6 +21,12 @@ void CurrenciesOps::CallSuitableProcess(CurrenciesOpsChoices choice)
     case CurrenciesOpsChoices::goFindCurrency:
         FindCurrencyScreen.render();
         break;
+    case CurrenciesOpsChoices::goUpdateCurrency:
+        UpdateCurrencyScreen.render();
+        break;
+    case CurrenciesOpsChoices::goConvertCurrency:
+        ConvertCurrencyScreen.render();
+        break;
     default:
         break;
     }

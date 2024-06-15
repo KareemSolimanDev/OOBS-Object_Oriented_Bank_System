@@ -7,7 +7,7 @@ void FindCurrency::displayContent()
 {
     string currencysymbol=Ui_helpers::textField("Enter Currency Symbol : ");
     CurrencyInfos Currency=Currency::searchForCurrency(DataManip_helpers::ToUpper(currencysymbol));
-    vector<string> cardDetailsKeys={"Country Name","Symbol","Currency Name","Rate"};
+    vector<string> cardDetailsKeys={"Country Name","Symbol","Currency Name","Rate(relative to USD)"};
     vector<string> CurrencyDetailsValue={Currency.countryName,Currency.symbol,Currency.CurrencyName,std::to_string(Currency.rate)};
 
 

@@ -68,6 +68,7 @@ protected:
     //===========================
 
     static CurrencyInfos convertCurrencyRecordToInfos(string CurrencyRecord);
+    static string convertCurrencyInfosToRecord(CurrencyInfos CurrencyInfo);
     static vector<CurrencyInfos> formatCurrenciesData(vector<string> CurrenciesData);
 };
 

@@ -19,6 +19,7 @@ protected:
     static vector<string> loadClientsData();
     static vector<string> loadAdminsLogData();
     static vector<string> loadCurrenciesData();
+    static bool updateCurrenciesData(vector<string> Data);
     
     static vector<vector<string>> loadDataAsStr(string fileName,string recordsSeprator=",");
     static vector<vector<string>> loadAdminsDataAsStr();

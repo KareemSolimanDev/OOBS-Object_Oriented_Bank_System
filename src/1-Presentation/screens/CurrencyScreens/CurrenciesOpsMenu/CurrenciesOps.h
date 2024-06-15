@@ -6,6 +6,8 @@
 #include "../../../../../include/Ui_Helpers/Ui_helpers.h"
 #include "../CurrenciesList/CurrenciesList.h"
 #include "../FindCurrency/FindCurrency.h"
+#include "../UpdateCurrency/UpdateCurrency.h"
+#include "../ConvertCurrency/ConvertCurrency.h"
 
 
 using std::string;
@@ -17,13 +19,15 @@ class CurrenciesOps : public BaseScreen
 {
 private:
     string _title = "Currencies Operations";
-    vector<string> _menuItems={"Dashboard", "Currencies List","Find Currency"};
+    vector<string> _menuItems={"Dashboard", "Currencies List","Find Currency","Update Currency","Convert Currency"};
 
     enum CurrenciesOpsChoices
     {
         goDashboard= 1,
         goCurrenciesList,
         goFindCurrency,
+        goUpdateCurrency,
+        goConvertCurrency,
     };
 
 

@@ -62,8 +62,27 @@ CurrencyInfos Bank::getCurrencyInfo(string currencySymbol)
             return currencyInfos;
         }
     }
-    return {};
+    return {"","","",0.0};
 }
+
+
+bool Bank::updateCurrencyRate(string currencySymbol, float newRate)
+{
+    vector<CurrencyInfos> currenciesInfos=loadCurrenciesInfo();
+    vector<string> newCurrenciesInfos;
+
+    for (CurrencyInfos &currency : currenciesInfos)
+    {
+        if (currency.symbol==currencySymbol)
+        {
+            currency.rate = newRate;
+        }
+        newCurrenciesInfos.push_back(convertCurrencyInfosToRecord(currency));
+    }
+
+    return updateCurrenciesData(newCurrenciesInfos);
+}
+
 
 
 AdminInfos Bank::getAdminInfo(string username)

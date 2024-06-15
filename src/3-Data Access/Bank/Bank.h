@@ -19,6 +19,7 @@ public:
     static vector<CurrencyInfos> loadCurrenciesInfo();
     static vector<vector<string>> getAllCurrenciesData();
     static CurrencyInfos getCurrencyInfo(string currencySymbol);
+    static bool updateCurrencyRate(string currencySymbol, float newCurrencyRate);
     
     static AdminInfos getAdminInfo(string username);
     static bool saveAdmin(AdminInfos admin);
