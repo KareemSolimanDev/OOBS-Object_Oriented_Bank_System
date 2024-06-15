@@ -18,7 +18,7 @@ private:
 
 public:
     static vector<vector<string>> getAllCurrenciesData();
-
+    static CurrencyInfos searchForCurrency(string currencySymbol);
 };
 
 #include "Currency.cpp"

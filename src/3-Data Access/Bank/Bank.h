@@ -18,6 +18,7 @@ public:
     static float getTotalBalancies();
     static vector<CurrencyInfos> loadCurrenciesInfo();
     static vector<vector<string>> getAllCurrenciesData();
+    static CurrencyInfos getCurrencyInfo(string currencySymbol);
     
     static AdminInfos getAdminInfo(string username);
     static bool saveAdmin(AdminInfos admin);

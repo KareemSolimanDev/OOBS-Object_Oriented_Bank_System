@@ -5,6 +5,7 @@
 #include "../../BaseScreen.h"
 #include "../../../../../include/Ui_Helpers/Ui_helpers.h"
 #include "../CurrenciesList/CurrenciesList.h"
+#include "../FindCurrency/FindCurrency.h"
 
 
 using std::string;
@@ -15,13 +16,14 @@ using std::vector;
 class CurrenciesOps : public BaseScreen
 {
 private:
-    string _title = "Admins Operations";
-    vector<string> _menuItems={"Dashboard", "Currencies List"};
+    string _title = "Currencies Operations";
+    vector<string> _menuItems={"Dashboard", "Currencies List","Find Currency"};
 
     enum CurrenciesOpsChoices
     {
         goDashboard= 1,
         goCurrenciesList,
+        goFindCurrency,
     };
 
 

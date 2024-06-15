@@ -1,0 +1,26 @@
+#pragma once
+
+#include <string>
+#include "../../BaseScreen.h"
+#include "../../../../../include/Ui_Helpers/Ui_helpers.h"
+#include "../../../../2-Business/Currency/Currency.h"
+
+using std::string;
+
+
+class FindCurrency : public BaseScreen
+{
+
+private:
+    string _title="Find Currency Screen";
+
+    void displayContent() override;
+    void handelInput() override;
+
+public:
+    FindCurrency(){BaseScreen::_title=_title;};
+}FindCurrencyScreen;
+
+
+#include "FindCurrency.cpp"
+

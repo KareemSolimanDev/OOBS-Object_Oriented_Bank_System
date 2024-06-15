@@ -17,13 +17,14 @@ void CurrenciesOps::CallSuitableProcess(CurrenciesOpsChoices choice)
         break;
     case CurrenciesOpsChoices::goCurrenciesList:
         CurrenciesListScreen.render();
-        this->render();
+        break;
+    case CurrenciesOpsChoices::goFindCurrency:
+        FindCurrencyScreen.render();
         break;
     default:
         break;
     }
-
-
+    this->render();
 }
 
 void CurrenciesOps::handelInput()

@@ -16,6 +16,8 @@ public:
     static string Ltrim(string sentence);
     static string Rtrim(string sentence);
     static string Trim(string sentence);
+    static string ToUpper(string sentence);
+    static string ToLower(string sentence);
 
 };
 #include "DataManip_helpers.cpp"

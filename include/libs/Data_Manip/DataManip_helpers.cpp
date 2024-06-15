@@ -66,3 +66,24 @@ string DataManip_helpers::Trim(string sentence)
 {
     return Rtrim(Ltrim(sentence));
 }
+
+
+string DataManip_helpers::ToUpper(string sentence)
+{
+    string USentence="";
+    for(char c : sentence)
+    {
+        USentence += toupper(c);
+    }
+    return USentence;
+}
+
+string DataManip_helpers::ToLower(string sentence)
+{
+    string LSentence="";
+    for(char c : sentence)
+    {
+        LSentence += tolower(c);
+    }
+    return LSentence;
+}
