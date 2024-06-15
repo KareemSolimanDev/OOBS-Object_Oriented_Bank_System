@@ -56,6 +56,12 @@ vector<string> CoreBank::loadCurrenciesData()
     return File_helpers::GetDataFromFile(Path::Currencies_F);
 }
 
+bool CoreBank::updateCurrenciesData(vector<string> data)
+{
+    return updateFileData(data, Path::Currencies_F);
+}
+
+
 vector<vector<string>> CoreBank::loadDataAsStr(string fileName,string recordsSeprator)
 {
     vector<vector<string>> data;

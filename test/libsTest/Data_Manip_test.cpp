@@ -95,6 +95,36 @@ void Trim_Test()
 }
 //==================================================
 
+//==================================================
+//======="ToUpper() function Test"=====================
+
+void ToUpper_Test()
+{
+    Ktest ToUpper_Test("ToUpper() function Test");
+
+    string output=DataManip_helpers::ToUpper("Kareem.");
+    ToUpper_Test.EXPECT_EQ(output,(string)"KAREEM.");
+
+
+    ToUpper_Test.DISPLAY_DATA();
+}
+//==================================================
+
+//==================================================
+//======="ToLower() function Test"=====================
+
+void ToLower_Test()
+{
+    Ktest ToLower_Test("ToLower() function Test");
+
+    string output=DataManip_helpers::ToLower("KAREEM");
+    ToLower_Test.EXPECT_EQ(output,(string)"kareem");
+
+
+    ToLower_Test.DISPLAY_DATA();
+}
+//==================================================
+
 int main()
 {
 
@@ -103,6 +133,8 @@ int main()
     Ltrim_Test();
     Rtrim_Test();
     Trim_Test();
+    ToUpper_Test();
+    ToLower_Test();
 
 
     return 0;

@@ -89,6 +89,12 @@ CurrencyInfos DataHandeler::convertCurrencyRecordToInfos(string currencyRecord)
     return { record[0], record[1], record[2], stof(record[3])};
 }
 
+string DataHandeler::convertCurrencyInfosToRecord(CurrencyInfos CurrencyInfo)
+{
+    vector<string> SData={CurrencyInfo.countryName,CurrencyInfo.symbol,CurrencyInfo.CurrencyName,std::to_string(CurrencyInfo.rate)};
+    return DataManip_helpers::JoinWords(SData,"|##|");
+}
+
 vector<CurrencyInfos> DataHandeler::formatCurrenciesData(vector<string> CurrenciesData)
 {
     vector<CurrencyInfos> FCurrencies;

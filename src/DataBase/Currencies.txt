@@ -58,7 +58,7 @@ Dominica|##|XCD|##|E.C. Dollar|##|2.700000
 Dominican Republic|##|DOP|##|Dominican Peso|##|54.716000
 East Timor|##|USD|##|US Dollar|##|1.000000
 Ecuador|##|USD|##|US Dollar|##|1.000000
-Egypt|##|EGP|##|Egyptian Pound|##|24.591999
+Egypt|##|EGP|##|Egyptian Pound|##|47.676399
 El Salvador|##|USD|##|US Dollar|##|1.000000
 Equatorial Guinea|##|XAF|##|CFA Franc|##|615.401978
 Eritrea|##|ERN|##|Eritrea Nakfa|##|15.000000
@@ -95,7 +95,7 @@ Indonesia|##|IDR|##|Indonesia Rupiah|##|15655.000000
 Iran|##|IRR|##|Iranian Rial|##|286676.000000
 Iraq|##|IQD|##|Iraqi Dinar|##|1450.000000
 Ireland|##|EUR|##|Euro|##|0.938000
-Palastine|##|PSP|##|Palastine Pound|##|.0001
+Palastine|##|PSP|##|Palastine Pound|##|0.000100
 Italy|##|EUR|##|Euro|##|0.938000
 Jamaica|##|JMD|##|Jamaican Dollar|##|153.470001
 Japan|##|JPY|##|Japanese Yen|##|134.869995
