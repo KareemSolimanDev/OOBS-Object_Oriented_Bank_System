@@ -9,7 +9,6 @@
 #include "../UpdateCurrency/UpdateCurrency.h"
 #include "../ConvertCurrency/ConvertCurrency.h"
 
-
 using std::string;
 using std::vector;
 
