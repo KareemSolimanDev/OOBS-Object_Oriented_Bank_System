@@ -37,7 +37,7 @@
 2. ### 🎨 [Project Design.](./doc/2-Design/design.md)
 3. ### 🧰 [Project Implemintation.](./doc/3-Implemintation/implemintation.md)
 4. ### 🧪 [Project Testing.](./doc/4-Testing/testing.md)
-4. ### 🚀 [Project Deployment.](./doc/4-Deployment/deployment.md)
+4. ### 🚀 [Project Deployment.](./doc/5-Deployment/deployment.md)
 
 <hr>
 
